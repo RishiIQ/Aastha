@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --aastha-brown: #3a200c;
+  --aastha-accent-orange: #9a3412;
+  --aastha-bg: #faf6f0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--aastha-bg);
+  color: var(--aastha-brown);
+  margin: 0;
+  padding: 0;
+}
+
+.dark body {
+  background-color: #14110f;
+  color: #f5ece1;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 35s linear infinite;
+}
+
+.aastha-card {
+  background: #FFFFFF;
+  border: 1px solid #e8dfd1;
+  transition: all 0.3s ease;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.dark .aastha-card {
+  background: #201b17;
+  border-color: #332821;
+  color: #f5ece1;
+}
+
+.aastha-card:hover {
+  border-color: #9a3412;
+  box-shadow: 0 16px 36px rgba(58, 32, 12, 0.08);
+  transform: translateY(-3px);
+}
+
+.aastha-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color:rgb(97, 7, 7) ;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  border-radius: 0.85rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(124, 45, 18, 0.3);
+}
+
+.dark .aastha-btn {
+  background-color: #612801;
+  color: #fffdfc;
+}
+
+.aastha-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(124, 45, 18, 0.5);
+}
+
+input, select, textarea {
+  border-radius: 0.85rem !important;
+}

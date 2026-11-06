@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aastha Blog & Sacred Insights | Aastha Pooja Store</title>
+  <link rel="shortcut icon" href="./logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            surface: '#fbf9f5',
+            border: '#e6ded1',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-serif { font-family: 'Playfair Display', serif; }
+    .aastha-card {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #e6ded1;
+      backdrop-filter: blur(8px);
+    }
+    .dark .aastha-card {
+      background: rgba(24, 24, 27, 0.9);
+      border-color: rgba(63, 63, 70, 0.6);
+    }
+  </style>
+</head>
+<body class="pt-[115px] bg-surface text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100">
+  <script src="js/db.js"></script>
+  <script src="js/layout.js"></script>
+
+  <!-- SECTION 1: Editorial Cinematic Hero Banner -->
+  <section class="relative min-h-[75vh] flex items-center justify-center bg-zinc-950 text-white overflow-hidden rounded-3xl max-w-8xl mx-4 my-6 shadow-2xl" style="background-image: linear-gradient(rgba(20,10,5,0.8), rgba(40, 15, 5, 0.53)), url('https://images.unsplash.com/photo-1477240489935-6c96abea2aba?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D'); background-size: cover; background-position: center;">
+    <div class="relative z-10 max-w-4xl mx-auto px-6 py-28 text-center space-y-6">
+      <span class="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/40 text-amber-300 text-sm font-bold uppercase tracking-[0.25em] px-4 py-2 rounded-full shadow-md">
+        ✨ Vedic Wisdom & Insights
+      </span>
+      <h1 class="text-5xl sm:text-7xl font-serif font-bold leading-[1.08] tracking-tight text-white drop-shadow-lg">
+        Chronicles of Devotion.
+      </h1>
+      <p class="text-zinc-200 dark:text-zinc-300 text-lg sm:text-xl font-light max-w-2xl mx-auto leading-relaxed">
+        Explore scriptural guidelines, artisanal heritage, and sacred ritual preparation manuals curated by our temple scholars.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Category Quick Filters -->
+  <section class="max-w-7xl mx-auto px-6 py-6">
+    <div class="flex flex-wrap items-center justify-center gap-3" id="blogFilterButtons">
+      <button onclick="filterBlogs('All', this)" class="blog-filter-btn px-5 py-2.5 rounded-full bg-amber-700 text-white text-sm font-bold uppercase tracking-wider shadow-sm cursor-pointer transition-all">All Chronicles</button>
+      <button onclick="filterBlogs('Ritual Science', this)" class="blog-filter-btn px-5 py-2.5 rounded-full aastha-card text-sm font-bold uppercase tracking-wider hover:border-amber-600 transition-colors text-zinc-800 dark:text-zinc-200 cursor-pointer">Ritual Science</button>
+      <button onclick="filterBlogs('Artisan Heritage', this)" class="blog-filter-btn px-5 py-2.5 rounded-full aastha-card text-sm font-bold uppercase tracking-wider hover:border-amber-600 transition-colors text-zinc-800 dark:text-zinc-200 cursor-pointer">Artisan Heritage</button>
+      <button onclick="filterBlogs('Vastu Shastra', this)" class="blog-filter-btn px-5 py-2.5 rounded-full aastha-card text-sm font-bold uppercase tracking-wider hover:border-amber-600 transition-colors text-zinc-800 dark:text-zinc-200 cursor-pointer">Vastu Shastra</button>
+      <button onclick="filterBlogs('Festival Prep', this)" class="blog-filter-btn px-5 py-2.5 rounded-full aastha-card text-sm font-bold uppercase tracking-wider hover:border-amber-600 transition-colors text-zinc-800 dark:text-zinc-200 cursor-pointer">Festival Prep</button>
+      <button onclick="filterBlogs('Maintenance Guide', this)" class="blog-filter-btn px-5 py-2.5 rounded-full aastha-card text-sm font-bold uppercase tracking-wider hover:border-amber-600 transition-colors text-zinc-800 dark:text-zinc-200 cursor-pointer">Maintenance Guide</button>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Main 6-Blog Grid -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="space-y-6">
+      <div class="flex items-center justify-between border-b border-border dark:border-zinc-800 pb-4">
+        <h2 id="blogCountHeader" class="text-xl font-serif font-bold uppercase text-zinc-900 dark:text-zinc-100">Featured Articles (6)</h2>
+        <span class="text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Click any card to read full article</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blogGrid">
+        
+        <!-- Blog 1 -->
+        <article class="blog-article aastha-card rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between cursor-pointer group hover:shadow-xl transition-all duration-300" data-category="Ritual Science" onclick="openBlog(0)">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/61BrfaAGSyL._AC_UF894,1000_QL80_.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Significance of Panchmukhi Diya">
+          </div>
+          <div class="p-8 space-y-4 flex-grow flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-[0.65rem] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">
+                <span>Ritual Science</span>
+                <span>4 Min Read</span>
+              </div>
+              <h3 class="font-serif font-bold text-xl uppercase tracking-wide text-zinc-900 dark:text-zinc-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">The Sacred Geometry & Significance of the Panchmukhi Diya</h3>
+              <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed uppercase line-clamp-3">Uncover how the five-faced brass lamp aligns directional energies and disperses negative vibrations during evening twilight sandhya vandanam.</p>
+            </div>
+            <div class="pt-4 border-t border-border dark:border-zinc-800 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+              <span>By Pandit Rameshwar</span>
+              <span class="text-amber-700 dark:text-amber-400 group-hover:translate-x-1 transition-transform">Read Article &rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog 2 -->
+        <article class="blog-article aastha-card rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between cursor-pointer group hover:shadow-xl transition-all duration-300" data-category="Artisan Heritage" onclick="openBlog(1)">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1786840229011-e69ff11d9325?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Moradabad Brass Craft">
+          </div>
+          <div class="p-8 space-y-4 flex-grow flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-[0.65rem] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">
+                <span>Artisan Heritage</span>
+                <span>6 Min Read</span>
+              </div>
+              <h3 class="font-serif font-bold text-xl uppercase tracking-wide text-zinc-900 dark:text-zinc-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">Inside Moradabad's Ancient Hand-Beaten Brass Foundries</h3>
+              <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed uppercase line-clamp-3">Tracing three generations of master smiths who hand-forge pure copper-zinc alloy ritual vessels without mechanical shortcuts.</p>
+            </div>
+            <div class="pt-4 border-t border-border dark:border-zinc-800 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+              <span>By Priya Tiwari</span>
+              <span class="text-amber-700 dark:text-amber-400 group-hover:translate-x-1 transition-transform">Read Article &rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog 3 -->
+        <article class="blog-article aastha-card rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between cursor-pointer group hover:shadow-xl transition-all duration-300" data-category="Vastu Shastra" onclick="openBlog(2)">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.pexels.com/photos/12718413/pexels-photo-12718413.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Griha Pravesh Secrets">
+          </div>
+          <div class="p-8 space-y-4 flex-grow flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-[0.65rem] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">
+                <span>Vastu Shastra</span>
+                <span>5 Min Read</span>
+              </div>
+              <h3 class="font-serif font-bold text-xl uppercase tracking-wide text-zinc-900 dark:text-zinc-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">Griha Pravesh: Purifying a New Home with Vedic Samagri</h3>
+              <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed uppercase line-clamp-3">A room-by-room manual on invoking positive planetary frequencies using sacred cow ghee, turmeric threads, and copper kalash placement.</p>
+            </div>
+            <div class="pt-4 border-t border-border dark:border-zinc-800 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+              <span>By Anand Mishra</span>
+              <span class="text-amber-700 dark:text-amber-400 group-hover:translate-x-1 transition-transform">Read Article &rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog 4 -->
+        <article class="blog-article aastha-card rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between cursor-pointer group hover:shadow-xl transition-all duration-300" data-category="Festival Prep" onclick="openBlog(3)">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1731515229733-f1aabe1d44a6?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Charcoal-Free Incense">
+          </div>
+          <div class="p-8 space-y-4 flex-grow flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-[0.65rem] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">
+                <span>Purity Standards</span>
+                <span>3 Min Read</span>
+              </div>
+              <h3 class="font-serif font-bold text-xl uppercase tracking-wide text-zinc-900 dark:text-zinc-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">The Hidden Dangers of Charcoal in Daily Incense Sticks</h3>
+              <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed uppercase line-clamp-3">Why traditional temple dhoop relies entirely on dried cow dung, natural resins, and pure sandalwood powders rather than toxic charcoal binders.</p>
+            </div>
+            <div class="pt-4 border-t border-border dark:border-zinc-800 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+              <span>By Sunita Sharma</span>
+              <span class="text-amber-700 dark:text-amber-400 group-hover:translate-x-1 transition-transform">Read Article &rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog 5 -->
+        <article class="blog-article aastha-card rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between cursor-pointer group hover:shadow-xl transition-all duration-300" data-category="Festival Prep" onclick="openBlog(4)">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://www.ritualistic.in/cdn/shop/files/N11263.jpg?v=1777895881" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Navratri Puja Kit Convenience">
+          </div>
+          <div class="p-8 space-y-4 flex-grow flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-[0.65rem] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">
+                <span>Festival Prep</span>
+                <span>4 Min Read</span>
+              </div>
+              <h3 class="font-serif font-bold text-xl uppercase tracking-wide text-zinc-900 dark:text-zinc-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">Eliminating Festival Chaos with Pre-Curated Samagri Boxes</h3>
+              <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed uppercase line-clamp-3">How checklist-driven ritual packaging ensures urban families never miss rare sacred herbs or auspicious items during Navratri rush hours.</p>
+            </div>
+            <div class="pt-4 border-t border-border dark:border-zinc-800 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+              <span>By Raghavendra Bhat</span>
+              <span class="text-amber-700 dark:text-amber-400 group-hover:translate-x-1 transition-transform">Read Article &rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog 6 -->
+        <article class="blog-article aastha-card rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between cursor-pointer group hover:shadow-xl transition-all duration-300" data-category="Maintenance Guide" onclick="openBlog(5)">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZRx7WoiW1S8VZCqr0OpkRlR0mi3Iuq3h-gxKqAVAyKfc0iIuolQSq-R04&s=10" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Brass Maintenance">
+          </div>
+          <div class="p-8 space-y-4 flex-grow flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-[0.65rem] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">
+                <span>Maintenance Guide</span>
+                <span>5 Min Read</span>
+              </div>
+              <h3 class="font-serif font-bold text-xl uppercase tracking-wide text-zinc-900 dark:text-zinc-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">Preserving Heirloom Brass Luster Without Harsh Chemicals</h3>
+              <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed uppercase line-clamp-3">Traditional pitambari alternatives: harnessing tamarind pulp, rock salt, and lemon juice to restore divine radiance to temple idols.</p>
+            </div>
+            <div class="pt-4 border-t border-border dark:border-zinc-800 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+              <span>By Meenakshi Iyer</span>
+              <span class="text-amber-700 dark:text-amber-400 group-hover:translate-x-1 transition-transform">Read Article &rarr;</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Featured Editorial Spotlight Banner -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="aastha-card p-8 sm:p-12 rounded-3xl bg-amber-950 text-amber-50 border border-amber-500/20 relative overflow-hidden shadow-2xl">
+      <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="max-w-2xl space-y-4 relative z-10">
+        <span class="text-[0.65rem] font-bold uppercase tracking-widest text-amber-400 px-3 py-1 bg-amber-900/60 rounded-full">Editor's Choice</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase leading-tight text-white">The Spiritual Significance of 2026 Tithi Alignments</h2>
+        <p class="text-sm sm:text-sm text-zinc-300 leading-relaxed uppercase">Discover how upcoming planetary conjunctions influence major vrat and festival dates across India throughout the year.</p>
+        <button onclick="openBlog(0)" class="px-6 py-3.5 bg-amber-600 hover:bg-amber-700 text-white rounded-xl font-bold text-sm uppercase tracking-wider transition-colors shadow-lg cursor-pointer">Read Spotlight Guide</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Author Directory Highlights -->
+  <section class="max-w-7xl mx-auto px-6 py-12 space-y-6">
+    <div class="text-center max-w-xl mx-auto space-y-2">
+      <h2 class="text-2xl font-serif font-bold uppercase text-zinc-900 dark:text-zinc-100">Meet Our Scholars</h2>
+      <p class="text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Authored by certified shastra scholars and generational artisans.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="aastha-card p-6 rounded-3xl text-center space-y-3">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200" class="w-16 h-16 rounded-full object-cover mx-auto border-2 border-amber-600/40" alt="Pandit Rameshwar">
+        <h3 class="font-serif font-bold text-sm uppercase text-zinc-900 dark:text-zinc-100">Pandit Rameshwar Shastri</h3>
+        <p class="text-[0.65rem] text-zinc-500 dark:text-zinc-400 uppercase tracking-widest">Head of Vedic Verification</p>
+      </div>
+      <div class="aastha-card p-6 rounded-3xl text-center space-y-3">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200" class="w-16 h-16 rounded-full object-cover mx-auto border-2 border-amber-600/40" alt="Priya Tiwari">
+        <h3 class="font-serif font-bold text-sm uppercase text-zinc-900 dark:text-zinc-100">Priya Tiwari</h3>
+        <p class="text-[0.65rem] text-zinc-500 dark:text-zinc-400 uppercase tracking-widest">Artisan Heritage Historian</p>
+      </div>
+      <div class="aastha-card p-6 rounded-3xl text-center space-y-3">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200" class="w-16 h-16 rounded-full object-cover mx-auto border-2 border-amber-600/40" alt="Anand Mishra">
+        <h3 class="font-serif font-bold text-sm uppercase text-zinc-900 dark:text-zinc-100">Anand Mishra</h3>
+        <p class="text-[0.65rem] text-zinc-500 dark:text-zinc-400 uppercase tracking-widest">Vastu & Ritual Consultant</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Trending Sacred Topics Tags -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="aastha-card p-8 rounded-3xl space-y-4 text-center">
+      <h2 class="text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">Explore by Sacred Theme</h2>
+      <div class="flex flex-wrap items-center justify-center gap-2 pt-2">
+        <span class="px-4 py-2 rounded-xl bg-amber-50 dark:bg-zinc-800/80 border border-border dark:border-zinc-700 text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200">#PoojaSamagri</span>
+        <span class="px-4 py-2 rounded-xl bg-amber-50 dark:bg-zinc-800/80 border border-border dark:border-zinc-700 text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200">#BrasswareCraft</span>
+        <span class="px-4 py-2 rounded-xl bg-amber-50 dark:bg-zinc-800/80 border border-border dark:border-zinc-700 text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200">#VastuShastra</span>
+        <span class="px-4 py-2 rounded-xl bg-amber-50 dark:bg-zinc-800/80 border border-border dark:border-zinc-700 text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200">#NavratriKits</span>
+        <span class="px-4 py-2 rounded-xl bg-amber-50 dark:bg-zinc-800/80 border border-border dark:border-zinc-700 text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200">#TempleIncense</span>
+        <span class="px-4 py-2 rounded-xl bg-amber-50 dark:bg-zinc-800/80 border border-border dark:border-zinc-700 text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200">#FestivalPanchang</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: Reader Statistics & Community Impact -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="aastha-card p-6 rounded-3xl space-y-1">
+        <h3 class="text-3xl font-serif font-bold text-amber-700 dark:text-amber-400">40K+</h3>
+        <p class="text-[0.65rem] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">Active Devotee Readers</p>
+      </div>
+      <div class="aastha-card p-6 rounded-3xl space-y-1">
+        <h3 class="text-3xl font-serif font-bold text-amber-700 dark:text-amber-400">50+</h3>
+        <p class="text-[0.65rem] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">Scriptural Guides</p>
+      </div>
+      <div class="aastha-card p-6 rounded-3xl space-y-1">
+        <h3 class="text-3xl font-serif font-bold text-amber-700 dark:text-amber-400">100%</h3>
+        <p class="text-[0.65rem] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">Shastra Verified</p>
+      </div>
+      <div class="aastha-card p-6 rounded-3xl space-y-1">
+        <h3 class="text-3xl font-serif font-bold text-amber-700 dark:text-amber-400">28 yrs</h3>
+        <p class="text-[0.65rem] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-bold">Varanasi Heritage</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: FAQ & Ritual Guidance Inquiry -->
+  <section class="max-w-3xl mx-auto px-6 py-12 space-y-6 text-center">
+    <div class="space-y-2">
+      <h2 class="text-2xl font-serif font-bold uppercase text-zinc-900 dark:text-zinc-100">Have a Ritual Question?</h2>
+      <p class="text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Our resident panel of scholars is ready to assist your devotional queries.</p>
+    </div>
+    <form onsubmit="event.preventDefault(); window.aasthaToast('Concierge Support', 'Your ritual query has been sent to Pandit Rameshwar Shastri!'); this.reset();" class="flex flex-col sm:flex-row gap-3">
+      <input type="text" placeholder="Ask about puja vidhi, tithi, or samagri..." required class="flex-grow p-4 bg-surface dark:bg-zinc-900 border border-border dark:border-zinc-700 rounded-2xl text-sm uppercase outline-none focus:border-amber-600 text-zinc-900 dark:text-white">
+      <button type="submit" class="aastha-btn px-8 py-4 text-center rounded-2xl cursor-pointer shadow-md">Ask Pandit Ji</button>
+    </form>
+  </section>
+
+  <!-- SECTION 9: Newsletter & Chronicle Subscription -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="aastha-card p-10 sm:p-16 rounded-3xl text-center max-w-4xl mx-auto space-y-6 border border-border shadow-xl">
+      <div class="space-y-2 max-w-xl mx-auto">
+        <span class="text-sm font-bold uppercase tracking-[0.2em] text-amber-700 dark:text-amber-400">Weekly Divine Wisdom</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold uppercase text-zinc-900 dark:text-zinc-100">Receive Sacred Chronicles in Your Inbox</h2>
+        <p class="text-sm uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Get auspicious festival alerts, tithi guides, and new blog releases delivered every Friday.</p>
+      </div>
+      <form onsubmit="event.preventDefault(); window.aasthaToast('Newsletter', 'Successfully subscribed to Aastha Chronicles!'); this.reset();" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="email" placeholder="Enter your email address" required class="flex-grow p-4 bg-surface dark:bg-zinc-900 border border-border dark:border-zinc-700 rounded-2xl text-sm uppercase outline-none focus:border-amber-600 text-zinc-900 dark:text-white">
+        <button type="submit" class="aastha-btn px-6 py-4 text-center cursor-pointer shadow-md">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- SECTION 10: Footer Brand Slogan & Closing Statement -->
+  <section class="max-w-7xl mx-auto px-6 py-12 text-center space-y-2 border-t border-border dark:border-zinc-800">
+    <p class="font-serif italic text-sm text-amber-800 dark:text-amber-400">"Rooted in Tradition, Delivered with Devotion."</p>
+    <p class="text-[0.65rem] uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Established 1998 in Vishwanath Gali, Varanasi.</p>
+  </section>
+
+  <!-- POPUP MODAL WITH BACKDROP BLUR -->
+  <div id="blog-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-md hidden opacity-0 transition-opacity duration-300" onclick="handleModalClick(event)">
+    <div class="aastha-card w-full max-w-4xl max-h-[90vh] rounded-3xl shadow-2xl overflow-y-auto relative flex flex-col transform scale-95 transition-transform duration-300 bg-surface dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100" id="modal-content-box">
+      
+      <!-- Close Button -->
+      <button onclick="closeBlog()" class="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-amber-700 text-white flex items-center justify-center font-bold shadow-lg hover:bg-amber-800 transition-colors cursor-pointer">
+        ✕
+      </button>
+
+      <!-- Modal Header Image -->
+      <div class="w-full h-64 sm:h-80 overflow-hidden relative shrink-0">
+        <img id="modal-img" src="" class="w-full h-full object-cover" alt="Blog Feature Image">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8">
+          <div class="space-y-2 text-white">
+            <span id="modal-category" class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-amber-600 rounded-full"></span>
+            <h2 id="modal-title" class="text-2xl sm:text-4xl font-serif font-bold uppercase leading-tight"></h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Body (5 Long Paragraphs) -->
+      <div class="p-8 sm:p-12 space-y-6 text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed uppercase">
+        <div class="flex items-center justify-between pb-6 border-b border-border dark:border-zinc-800 text-sm text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-wider">
+          <span id="modal-author"></span>
+          <span id="modal-read-time"></span>
+        </div>
+        
+        <p id="modal-p1" class="font-normal"></p>
+        <p id="modal-p2" class="font-normal"></p>
+        <p id="modal-p3" class="font-normal"></p>
+        <p id="modal-p4" class="font-normal"></p>
+        <p id="modal-p5" class="font-normal"></p>
+
+        <div class="pt-8 border-t border-border dark:border-zinc-800 flex items-center justify-between">
+          <span class="text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">Share this sacred insight</span>
+          <button onclick="closeBlog()" class="px-6 py-3 bg-amber-700 hover:bg-amber-800 text-white rounded-xl font-bold text-sm uppercase tracking-wider transition-colors cursor-pointer shadow-md">Back to Chronicles</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BLOG DATA & JAVASCRIPT CONTROLLER -->
+  <script>
+    // 6 Blogs Data with 5 Unique Long Paragraphs Each
+    const blogsData = [
+      {
+        title: "The Sacred Geometry & Significance of the Panchmukhi Diya",
+        category: "Ritual Science",
+        author: "By Pandit Rameshwar Shastri",
+        readTime: "4 Min Read",
+        image: "https://m.media-amazon.com/images/I/61BrfaAGSyL._AC_UF894,1000_QL80_.jpg",
+        p1: "The Panchmukhi diya holds a profound position in Vedic ritual traditions, specifically designed to radiate positive vibrational frequencies in five distinct cardinal directions simultaneously. According to ancient shastras, lighting a five-faced brass lamp represents the mastery over the five cosmic elements—earth, water, fire, air, and ether—invoking universal balance within the household shrine.",
+        p2: "Crafted meticulously from high-grade virgin brass, these lamps are proportioned according to traditional Shilpa Shastra guidelines to ensure optimal thermal conductivity and steady flame retention. When filled with pure cow ghee or sesamum oil and cotton wicks, the interplay between the metal alloy and burning flame produces an electromagnetic field that purifies surrounding air particles.",
+        p3: "During twilight sandhya vandanam or special festival deepdaan ceremonies, placing the Panchmukhi diya facing East, West, North, South, and Upward creates an unbroken shield of spiritual protection. Devotees often recite specific stotras while igniting each individual wick, focusing their intention on dispelling ignorance and welcoming abundance into their living spaces.",
+        p4: "Furthermore, the physical act of cleaning and polishing the lamp prior to sunset is considered an act of meditative devotion in itself. Using natural cleansing agents like tamarind and rock salt preserves the sacred luster of the metal without scratching its intricate floral engravings, ensuring the artifact can be passed down as an heirloom across generations.",
+        p5: "Ultimately, the Panchmukhi diya serves as a tangible reminder of the inner light residing within every human soul. By integrating this traditional artifact into daily household worship, families maintain an unbroken link to ancient spiritual sciences that prioritize mental tranquility, ecological harmony, and unwavering reverence for divine creation."
+      },
+      {
+        title: "Inside Moradabad's Ancient Hand-Beaten Brass Foundries",
+        category: "Artisan Heritage",
+        author: "By Priya Tiwari",
+        readTime: "6 Min Read",
+        image: "https://images.unsplash.com/photo-1786840229011-e69ff11d9325?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+        p1: "Nested within the bustling alleyways of Moradabad lie generational foundries where master smiths continue to practice the ancient art of hand-beating brass and bell-metal alloy. Unlike mass-produced industrial stamping units, these traditional workshops rely on muscle power, charcoal furnaces, and ancestral casting techniques passed down through centuries.",
+        p2: "The manufacturing journey begins with precise alloy blending, combining optimal ratios of copper and zinc to achieve both resonant acoustic quality and deep golden radiance. Once molten, the metal is poured into handcrafted sand molds before undergoing rigorous manual hammering to eliminate internal air pockets and strengthen the structural integrity of each pooja vessel.",
+        p3: "Detailing and engraving represent the soul of Moradabadi craftsmanship. Skilled artisans utilize specialized hand chisels to carve intricate motifs of lotus petals, divine Kalash symbols, and traditional creepers onto the metallic surface without the aid of computerized laser guides or automated lathes.",
+        p4: "Economic sustainability and fair-trade practices remain vital to preserving this fragile heritage. By partnering directly with artisan families through ethical supply chains, platforms like Aastha ensure that master smiths receive equitable compensation for their grueling labor, safeguarding their livelihoods against cheap factory imports.",
+        p5: "When a devotee holds a hand-beaten brass thali or kalash during their daily morning rituals, they are holding hours of dedicated human effort and artistic prayer. This deep physical and spiritual connection transforms ordinary kitchenware into sacred temple-grade artifacts meant to last lifetimes."
+      },
+      {
+        title: "Griha Pravesh: Purifying a New Home with Vedic Samagri",
+        category: "Vastu Shastra",
+        author: "By Anand Mishra",
+        readTime: "5 Min Read",
+        image: "https://images.pexels.com/photos/12718413/pexels-photo-12718413.jpeg",
+        p1: "Entering a newly constructed or purchased home marks one of the most significant milestones in a family's life, requiring careful alignment with cosmic energies through the sacred Griha Pravesh ceremony. Rooted deeply in Vastu Shastra, this ritual purifies the physical structure and establishes a protective spiritual boundary against negative external influences.",
+        p2: "The ceremony commences with the ceremonial boiling of fresh cow milk in a brand-new brass vessel until it spills over the edges, symbolizing overflowing prosperity, abundance, and warmth for all inhabitants. This is followed by the installation of the consecrated copper Kalash filled with holy Gangajal, mango leaves, and a coconut at the northeast corner of the dwelling.",
+        p3: "Havan (sacred fire ritual) plays an indispensable role in clearing stagnant construction energies. Burning specialized aromatic herbs, dry cow dung cakes, and pure ghee releases purifying botanical vapors that neutralize airborne impurities while invoking the blessings of Vastu Purusha and directional guardian deities.",
+        p4: "Hanging fresh mango leaf torans and drawing auspicious turmeric-kumkum rangolis across the main threshold acts as a welcoming beacon for positive deities like Goddess Lakshmi and Lord Ganesha. Every ritual step is meticulously scheduled according to auspicious planetary tithis to maximize harmonious vibrations.",
+        p5: "By adhering strictly to authentic scriptural samagri guidelines during Griha Pravesh, families transform brick and mortar into a sanctified sanctuary of peace. The home becomes a thriving ecosystem where spiritual contemplation, family bonding, and daily gratitude flourish uninterrupted."
+      },
+      {
+        title: "The Hidden Dangers of Charcoal in Daily Incense Sticks",
+        category: "Purity Standards",
+        author: "By Sunita Sharma",
+        readTime: "3 Min Read",
+        image: "https://images.unsplash.com/photo-1731515229733-f1aabe1d44a6?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+        p1: "In modern commercial markets, the majority of cheap incense sticks rely heavily on black charcoal powder as a base binder due to its low cost and rapid combustion rate. However, burning charcoal indoors releases heavy carbon soot, synthetic fragrances, and toxic benzene derivatives that compromise respiratory health within enclosed prayer rooms.",
+        p2: "In stark contrast, authentic Vedic dhoop and incense guidelines mandate the use of organic binding agents such as dried cow dung powder, jigat bark paste, and natural resins like frankincense and myrrh. These traditional ingredients burn cleanly without emitting choking smoke or artificial chemical residues.",
+        p3: "Pure sandalwood, loban, and guggal possess potent antimicrobial and air-purifying properties documented in ancient Ayurvedic texts. When burned on glowing embers or rolled into charcoal-free sticks, they emit subtle therapeutic aromas that calm the nervous system and deepen meditative focus.",
+        p4: "Switching to chemical-free incense is especially critical for households with infants, elderly family members, or individuals prone to asthma and respiratory sensitivities. Clean ritual products ensure that devotional practices remain uplifting and healthful rather than triggering indoor pollution.",
+        p5: "As conscious consumers, verifying ingredient transparency on pooja product packaging is essential. Demanding 100% charcoal-free and synthetic-free incense supports ethical cottage industries dedicated to keeping traditional, health-conscious standards alive in contemporary worship."
+      },
+      {
+        title: "Eliminating Festival Chaos with Pre-Curated Samagri Boxes",
+        category: "Festival Prep",
+        author: "By Raghavendra Bhat",
+        readTime: "4 Min Read",
+        image: "https://www.ritualistic.in/cdn/shop/files/N11263.jpg?v=1777895881",
+        p1: "Major Hindu festivals like Diwali, Navratri, and Satyanarayan Puja bring immense spiritual joy but often induce severe logistical stress for urban families running from store to store trying to assemble dozens of obscure ritual items. Missing even a single mandatory item like black sesame seeds or red silk cloth can disrupt the entire puja muhurat.",
+        p2: "Pre-curated festival samagri boxes eliminate this friction entirely by packing every single shastra-compliant item into a single, beautifully organized box. From turmeric threads and supari nuts to lotus seeds and sacred gangajal vials, everything is accounted for with absolute precision.",
+        p3: "This checklist-driven convenience allows family members to focus their energy entirely on spiritual preparation, prayer, and mental devotion rather than frantic market errands. It ensures that rituals are performed with complete adherence to scriptural requirements without compromise.",
+        p4: "Furthermore, professional packaging standards—such as heavy bubble cushioning and vacuum-sealed herbs—prevent transit spillage and keep perishable items fresh and fragrant right up until the moment of the puja.",
+        p5: "Embracing pre-packaged ritual kits represents the perfect harmony between ancient Vedic traditions and modern lifestyle efficiency, allowing busy households to maintain deep cultural roots with effortless grace and absolute peace of mind."
+      },
+      {
+        title: "Preserving Heirloom Brass Luster Without Harsh Chemicals",
+        category: "Maintenance Guide",
+        author: "By Meenakshi Iyer",
+        readTime: "5 Min Read",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZRx7WoiW1S8VZCqr0OpkRlR0mi3Iuq3h-gxKqAVAyKfc0iIuolQSq-R04&s=10",
+        p1: "Brass artifacts adorning home altars naturally accumulate oxidation and tarnish over time due to exposure to atmospheric humidity, lamp oils, and burning camphor fumes. While commercial chemical cleaners offer instant shine, their abrasive acidic compounds gradually erode fine engravings and weaken the outer metallic layer.",
+        p2: "Traditional Indian households have long relied on gentle, organic cleaning agents such as tamarind pulp mixed with coarse salt or fresh lemon halves dipped in fine wood ash. These natural solutions dissolve copper oxide tarnish instantly without damaging the underlying metal alloy.",
+        p3: "The cleaning process itself should be approached as a mindful ritual of care and gratitude toward sacred objects. Gently rubbing the paste in circular motions across idols and diyas cleanses both the physical brass and the mental space of the devotee.",
+        p4: "After scrubbing, thoroughly rinsing the items with lukewarm water and buffing them dry with a clean cotton cloth prevents water spots and restores a deep, mirror-like golden glow that enhances the aesthetic sanctity of the prayer altar.",
+        p5: "Regular maintenance ensures that brass diyas, kalashes, and bells remain pristine heirloom pieces capable of being handed down across generations with their divine radiance fully intact."
+      }
+    ];
+
+    function openBlog(index) {
+      const blog = blogsData[index];
+      document.getElementById('modal-img').src = blog.image;
+      document.getElementById('modal-category').innerText = blog.category;
+      document.getElementById('modal-title').innerText = blog.title;
+      document.getElementById('modal-author').innerText = blog.author;
+      document.getElementById('modal-read-time').innerText = blog.readTime;
+      document.getElementById('modal-p1').innerText = blog.p1;
+      document.getElementById('modal-p2').innerText = blog.p2;
+      document.getElementById('modal-p3').innerText = blog.p3;
+      document.getElementById('modal-p4').innerText = blog.p4;
+      document.getElementById('modal-p5').innerText = blog.p5;
+
+      const modal = document.getElementById('blog-modal');
+      const box = document.getElementById('modal-content-box');
+      
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        box.classList.remove('scale-95');
+        box.classList.add('scale-100');
+      }, 10);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBlog() {
+      const modal = document.getElementById('blog-modal');
+      const box = document.getElementById('modal-content-box');
+      
+      modal.classList.add('opacity-0');
+      box.classList.remove('scale-100');
+      box.classList.add('scale-95');
+      
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    }
+
+    function handleModalClick(event) {
+      if (event.target.id === 'blog-modal') {
+        closeBlog();
+      }
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeBlog();
+      }
+    });
+
+    function filterBlogs(category, buttonElement) {
+      // Update active button styling
+      document.querySelectorAll('.blog-filter-btn').forEach(btn => {
+        btn.className = "blog-filter-btn px-5 py-2.5 rounded-full aastha-card text-sm font-bold uppercase tracking-wider hover:border-amber-600 transition-colors text-zinc-800 dark:text-zinc-200 cursor-pointer";
+      });
+      if (buttonElement) {
+        buttonElement.className = "blog-filter-btn px-5 py-2.5 rounded-full bg-amber-700 text-white text-sm font-bold uppercase tracking-wider shadow-sm cursor-pointer transition-all";
+      }
+
+      const articles = document.querySelectorAll('.blog-article');
+      let visibleCount = 0;
+
+      articles.forEach(article => {
+        const articleCategory = article.dataset.category;
+        if (category === 'All' || articleCategory === category) {
+          article.style.display = 'flex';
+          visibleCount++;
+        } else {
+          article.style.display = 'none';
+        }
+      });
+
+      const countHeader = document.getElementById('blogCountHeader');
+      if (countHeader) {
+        countHeader.textContent = category === 'All' ? `Featured Articles (6)` : `${category} Articles (${visibleCount})`;
+      }
+    }
+  </script>
+</body>
+</html>

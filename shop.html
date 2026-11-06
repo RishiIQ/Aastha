@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sacred Pooja Catalog | Aastha Pooja Store</title>
+  <link rel="shortcut icon" href="./logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pt-[115px] bg-surface text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100">
+  <script src="js/db.js"></script>
+  <script src="js/layout.js"></script>
+
+  <!-- SECTION 1: Boutique Editorial Banner -->
+  <section class="flex justify-center items-center relative bg-amber-950 text-amber-50 p-20 overflow-hidden rounded-3xl mx-4 my-6 shadow-2xl">
+    <div class="absolute inset-0 z-0">
+      <img src="https://m.media-amazon.com/images/I/71b6-iHgNoL.jpg" alt="Pooja Banner" class="w-full h-full object-cover opacity-30 filter brightness-90">
+      <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
+    </div>
+    <div class="relative z-10 max-w-3xl px-8 py-20 lg:py-28 space-y-6">
+      <span class="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/30 text-amber-300 text-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+        ✨ Curated Devotional Collection
+      </span>
+      <h1 class="text-4xl lg:text-6xl font-serif font-bold leading-tight text-white">Sacred Artifacts &amp; <span class="text-amber-400">Temple Essentials</span></h1>
+      <p class="text-zinc-300 text-base lg:text-lg leading-relaxed">Handcrafted solid brassware, pure cow ghee wicks, and natural dhoop sourced directly from artisan clusters across India.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Advanced Sidebar & Grid Layout Container -->
+  <section class="max-w-7xl mx-auto py-12 px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-10">
+      
+      <!-- Left Sidebar Filters -->
+      <div class="space-y-8">
+        <div class="aastha-card p-6 rounded-3xl space-y-4">
+          <h3 class="font-serif font-bold text-lg uppercase tracking-wider pb-3 border-b border-border dark:border-zinc-800 text-zinc-900 dark:text-white">Search Catalog</h3>
+          <div class="relative">
+            <input type="text" id="productSearch" oninput="searchProducts()" placeholder="Search diyas, incense..." class="w-full px-4 py-3 bg-amber-50/50 dark:bg-zinc-900 border border-border dark:border-zinc-700 text-sm uppercase outline-none focus:border-amber-600 rounded-xl text-zinc-900 dark:text-white">
+          </div>
+        </div>
+
+        <div class="aastha-card p-6 rounded-3xl space-y-4">
+          <h3 class="font-serif font-bold text-lg uppercase tracking-wider pb-3 border-b border-border dark:border-zinc-800 text-zinc-900 dark:text-white">Filter by Goal</h3>
+          <div class="flex flex-col gap-2" id="product-filter-buttons">
+            <button onclick="filterGoal('all', this)" class="product-filter-btn text-left px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider transition-all bg-amber-800 text-white shadow cursor-pointer" data-filter="all">All Products</button>
+            <button onclick="filterGoal('Daily Aarti', this)" class="product-filter-btn text-left px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider transition-all bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 cursor-pointer" data-filter="Daily Aarti">Daily Aarti</button>
+            <button onclick="filterGoal('Purification', this)" class="product-filter-btn text-left px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider transition-all bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 cursor-pointer" data-filter="Purification">Purification</button>
+            <button onclick="filterGoal('Festivals', this)" class="product-filter-btn text-left px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider transition-all bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 cursor-pointer" data-filter="Festivals">Festivals</button>
+            <button onclick="filterGoal('Meditation', this)" class="product-filter-btn text-left px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider transition-all bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 cursor-pointer" data-filter="Meditation">Meditation</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Main Catalog Grid (3 Columns) -->
+      <div class="lg:col-span-3 space-y-6">
+        <div class="flex justify-between items-center pb-4 border-b border-border dark:border-zinc-800">
+          <span class="text-sm uppercase font-bold tracking-widest text-zinc-500 dark:text-zinc-400" id="productCountHeader">Showing all curated items</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="productsGrid"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: Festival Preparation Checklist -->
+  <section class="max-w-7xl mx-auto py-16 px-6">
+    <div class="bg-amber-950 text-amber-50 rounded-3xl p-10 sm:p-14 shadow-2xl relative overflow-hidden">
+      <div class="max-w-2xl space-y-4 relative z-10">
+        <span class="text-sm font-bold uppercase tracking-widest bg-amber-500/20 px-3.5 py-1.5 rounded-full text-amber-300">Auspicious Countdown</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold">Are You Ready for the Upcoming Tithi?</h2>
+        <p class="text-zinc-300 text-sm leading-relaxed">Ensure your home altar is cleansed and your brassware polished at least 5 days prior to major celebrations to invite positive vibrations.</p>
+        <div class="pt-2"><a href="calendar.html" class="aastha-btn">View 2026 Tithi Calendar</a></div>
+      </div>
+    </div>
+  </section>
+
+<!-- SECTION 4: The 3-Step Consecration Guarantee -->
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="text-center space-y-2 mb-12">
+      <h2 class="text-3xl font-serif font-bold uppercase text-zinc-900 dark:text-white">Our 3-Step Sanctification Protocol</h2>
+      <p class="text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Every sacred item undergoes strict ritual verification before dispatch.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      <div class="aastha-card rounded-3xl overflow-hidden border border-border shadow-sm flex flex-col justify-between">
+        <div class="aspect-video bg-amber-50 overflow-hidden">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5tnfQE0mGE3RfKDathHXXeym01v4LifBjjfPVm1Q1dJ7wKyLP03DDqyo&s=10" alt="Scriptural Verification" class="w-full h-full object-cover">
+        </div>
+        <div class="p-8 space-y-3 flex-grow flex flex-col justify-between">
+          <div>
+            <span class="text-amber-700 dark:text-amber-400 font-bold text-2xl font-serif block mb-2">01</span>
+            <h4 class="font-serif font-bold text-lg uppercase text-zinc-900 dark:text-white mb-2">Scriptural Verification</h4>
+            <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">Consultation with expert pandit advisors to ensure correct form, dimensions, and wick placements.</p>
+          </div>
+        </div>
+      </div>
+      <div class="aastha-card rounded-3xl overflow-hidden border border-border shadow-sm flex flex-col justify-between">
+        <div class="aspect-video bg-amber-50 overflow-hidden">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR2pUqyd1vTSQJfQFUGcoEdWbsqb64FpLjsATsZroooPEIVA0TA3ioiGU&s=10" alt="Material Purity Assays" class="w-full h-full object-cover">
+        </div>
+        <div class="p-8 space-y-3 flex-grow flex flex-col justify-between">
+          <div>
+            <span class="text-amber-700 dark:text-amber-400 font-bold text-2xl font-serif block mb-2">02</span>
+            <h4 class="font-serif font-bold text-lg uppercase text-zinc-900 dark:text-white mb-2">Material Purity Assays</h4>
+            <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">Laboratory testing of ghee, camphor, and herbal dhoop for zero synthetic chemicals or fillers.</p>
+          </div>
+        </div>
+      </div>
+      <div class="aastha-card rounded-3xl overflow-hidden border border-border shadow-sm flex flex-col justify-between">
+        <div class="aspect-video bg-amber-50 overflow-hidden">
+          <img src="https://m.media-amazon.com/images/I/71HXg5zyNYL.jpg" alt="Drop-Test Security" class="w-full h-full object-cover">
+        </div>
+        <div class="p-8 space-y-3 flex-grow flex flex-col justify-between">
+          <div>
+            <span class="text-amber-700 dark:text-amber-400 font-bold text-2xl font-serif block mb-2">03</span>
+            <h4 class="font-serif font-bold text-lg uppercase text-zinc-900 dark:text-white mb-2">Drop-Test Security</h4>
+            <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">Multi-layer bubble cushioning designed to survive rough transit without a single scratch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Brass Care & Maintenance Masterclass -->
+  <section class="bg-amber-100/30 dark:bg-zinc-900/40 py-20 border-y border-border dark:border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <span class="text-amber-700 dark:text-amber-400 font-bold uppercase text-sm tracking-widest block">Expert Guide</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase text-zinc-900 dark:text-white">How to Maintain Your Solid Brassware Mirror Shine</h2>
+        <p class="text-sm sm:text-sm uppercase tracking-wider text-zinc-600 dark:text-zinc-300 leading-relaxed">Avoid harsh chemical abrasives. A traditional blend of tamarind paste and coarse sea salt restores your brass diyas and thalis to absolute golden brilliance instantly.</p>
+        <div><a href="blog.html" class="aastha-btn">Read Full Brass Care Guide</a></div>
+      </div>
+      <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-border">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-V4n7H1_m4P9jtCYVOumYgjvP3DnvuOu_-kD7LJtaUytC5FnIz2UAxOWx&s=10" alt="Brass Care" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Devotee Stories & Testimonials Carousel Grid -->
+  <section class="py-24 px-6 max-w-7xl mx-auto text-center space-y-12 bg-amber-50/40 dark:bg-zinc-900/40 rounded-3xl my-12 border border-border dark:border-zinc-800 shadow-sm">
+    <div class="space-y-3 max-w-2xl mx-auto">
+      <span class="text-sm font-bold uppercase tracking-[0.2em] text-amber-700 dark:text-amber-400">Global Community</span>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase tracking-tight text-zinc-900 dark:text-white">Voices from 40,000+ Devoted Homes</h2>
+      <div class="flex items-center justify-center gap-2 pt-1">
+        <span class="text-amber-500 text-sm tracking-widest">★★★★★</span>
+        <span class="text-zinc-700 dark:text-zinc-300 text-sm font-bold uppercase tracking-wider">4.92 / 5.00 Global Score</span>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-left max-w-6xl mx-auto items-stretch">
+      <div class="aastha-card p-8 rounded-3xl flex flex-col justify-between shadow-sm bg-surface space-y-6">
+        <div class="space-y-3">
+          <p class="text-amber-500 text-sm tracking-widest">★★★★★</p>
+          <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"The Panchmukhi diya quality is exceptional. Wonderful weight and golden shine..."</p>
+        </div>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border dark:border-zinc-800">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shadow-inner shrink-0" alt="Sunita V.">
+          <div>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Sunita V.</h4>
+            <span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Bengaluru</span>
+          </div>
+        </div>
+      </div>
+      <div class="aastha-card p-8 rounded-3xl flex flex-col justify-between shadow-sm bg-surface space-y-6">
+        <div class="space-y-3">
+          <p class="text-amber-500 text-sm tracking-widest">★★★★★</p>
+          <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"Ordered the Navratri kit and nothing was missing. Stress-free preparation!"</p>
+        </div>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border dark:border-zinc-800">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=200" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shadow-inner shrink-0" alt="Rohit S.">
+          <div>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Rohit S.</h4>
+            <span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Pune</span>
+          </div>
+        </div>
+      </div>
+      <div class="aastha-card p-8 rounded-3xl flex flex-col justify-between shadow-sm bg-surface space-y-6">
+        <div class="space-y-3">
+          <p class="text-amber-500 text-sm tracking-widest">★★★★★</p>
+          <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"Genuine charcoal-free sandalwood incense. My prayer room smells divine."</p>
+        </div>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border dark:border-zinc-800">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shadow-inner shrink-0" alt="Anita D.">
+          <div>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Anita D.</h4>
+            <span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Ahmedabad</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: Institutional & Temple Bulk Order Banner -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="bg-zinc-950 text-white rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+      <div class="space-y-3 max-w-xl">
+        <span class="text-sm font-bold text-amber-400 uppercase tracking-widest">Temple Trusts & Corporate Gifts</span>
+        <h2 class="text-2xl lg:text-3xl font-serif font-bold">Planning a Grand Wedding or Temple Donation?</h2>
+        <p class="text-zinc-400 text-sm">We provide wholesale tiered pricing, custom wooden gift packaging, and direct dispatch for trusts and large families.</p>
+      </div>
+      <a href="contact.html" class="px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-2xl font-bold text-sm shrink-0 transition-all shadow-xl uppercase tracking-wider">Inquire for Wholesale</a>
+    </div>
+  </section>
+
+  <!-- SECTION 8: Interactive Pooja Quiz / Recommender Banner -->
+  <section class="bg-amber-900 text-amber-50 py-16 px-6 text-center rounded-3xl max-w-7xl mx-auto my-8 shadow-xl">
+    <div class="max-w-2xl mx-auto space-y-4">
+      <span class="text-sm font-bold uppercase tracking-widest bg-white/20 px-3.5 py-1.5 rounded-full text-amber-200">Personalized Seva</span>
+      <h3 class="text-3xl font-serif font-black uppercase">Unsure Which Kit Matches Your Altar?</h3>
+      <p class="text-sm uppercase tracking-widest text-amber-200">Take our 1-minute ritual selector quiz to find the perfect brass set and incense profile for your home.</p>
+      <div class="pt-2"><button onclick="window.aasthaToast('Quiz', 'Launching Pooja Altar Selector Quiz...');" class="px-8 py-4 bg-white text-amber-950 rounded-2xl font-bold text-sm uppercase tracking-wider shadow-lg hover:bg-amber-50 transition-all cursor-pointer">Start Altar Quiz</button></div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: Frequently Asked Questions Accordion -->
+  <section class="py-20 px-6 max-w-4xl mx-auto">
+    <h3 class="text-3xl font-serif font-bold uppercase text-center mb-12 text-zinc-900 dark:text-white">Catalog & Shipping FAQs</h3>
+    <div class="space-y-4">
+      <div class="aastha-card p-6 cursor-pointer rounded-2xl" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+        <h4 class="font-bold text-sm uppercase flex justify-between text-zinc-900 dark:text-white">Are your brass products pure or plated? <span>+</span></h4>
+        <p class="ans hidden text-sm text-zinc-600 dark:text-zinc-300 mt-2 leading-relaxed">All our brassware items are cast from 100% solid, heavy-gauge brass without any cheap metal plating or inner filling.</p>
+      </div>
+      <div class="aastha-card p-6 cursor-pointer rounded-2xl" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+        <h4 class="font-bold text-sm uppercase flex justify-between text-zinc-900 dark:text-white">Do you ship fragile items safely? <span>+</span></h4>
+        <p class="ans hidden text-sm text-zinc-600 dark:text-zinc-300 mt-2 leading-relaxed">Yes! We use multi-layer custom corrugated boxes with heavy air bubble wrapping and offer 100% transit damage replacement guarantee.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: Global Diaspora & International Shipping Callout -->
+  <section class="py-16 px-6 max-w-5xl mx-auto text-center border-t border-border dark:border-zinc-800">
+    <p class="text-sm font-bold uppercase tracking-[0.2em] text-amber-700 dark:text-amber-400">Global Devotional Shipping</p>
+    <p class="text-sm font-bold uppercase mt-2 text-zinc-700 dark:text-zinc-300">We routinely ship consecrated pooja boxes and brass idols to the US, UK, Canada, Australia, and UAE with expedited customs clearance.</p>
+  </section>
+
+  <!-- SECTION 11: Newsletter & Blessing Subscriptions -->
+  <section class="bg-amber-100/40 dark:bg-zinc-900 py-16 px-6 text-center border-t border-border dark:border-zinc-800">
+    <div class="max-w-xl mx-auto space-y-4">
+      <h3 class="text-2xl font-serif font-bold uppercase text-zinc-900 dark:text-white">Receive Auspicious Festival Alerts</h3>
+      <p class="text-sm uppercase tracking-wider text-zinc-600 dark:text-zinc-300">Subscribe for monthly tithi guides, festival reminders, and exclusive member discounts.</p>
+      <form onsubmit="event.preventDefault(); window.aasthaToast('Newsletter', 'Subscribed successfully!');" class="flex gap-2 pt-2">
+        <input type="email" placeholder="Email address" required class="flex-1 p-3.5 border border-border dark:border-zinc-700 text-sm uppercase bg-surface dark:bg-zinc-900 text-zinc-900 dark:text-white outline-none rounded-xl">
+        <button type="submit" class="aastha-btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- SECTION 12: Trust & Partner Certifications Footer Bar -->
+  <section class="py-12 px-6 max-w-7xl mx-auto text-center text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 border-t border-border dark:border-zinc-800">
+    Certified Solid Brass &bull; Pure A2 Cow Ghee &bull; Shastra Verified Rituals &bull; Since 1998
+  </section>
+
+  <script>
+    let currentGoal = 'all';
+    function renderProducts(goal, searchQuery = '') {
+      currentGoal = goal;
+      const grid = document.getElementById('productsGrid');
+      const countHeader = document.getElementById('productCountHeader');
+      if (!grid || !window.aasthaDB) return;
+      let list = goal === 'all' ? aasthaDB.products : aasthaDB.products.filter(p => p.goal === goal || p.category === goal);
+      if (searchQuery.trim() !== '') {
+        const query = searchQuery.toLowerCase();
+        list = list.filter(p => p.name.toLowerCase().includes(query) || p.description.toLowerCase().includes(query));
+      }
+      if (countHeader) countHeader.textContent = `Showing ${list.length} sacred items`;
+      if (list.length === 0) {
+        grid.innerHTML = `<div class="col-span-full py-16 text-center text-zinc-500 uppercase tracking-widest text-sm">No matching products found.</div>`;
+        return;
+      }
+      grid.innerHTML = list.map(p => `
+        <div class="aastha-card p-6 flex flex-col justify-between space-y-4 rounded-3xl shadow-sm">
+          <div class="aspect-square bg-amber-50 dark:bg-zinc-800 overflow-hidden relative rounded-2xl">
+            <span class="absolute top-3 left-3 bg-amber-700 text-white text-[0.6rem] font-bold uppercase px-3 py-1 rounded-full shadow">${p.badge}</span>
+            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover rounded-2xl">
+          </div>
+          <div class="space-y-1">
+            <div class="flex justify-between items-center text-sm text-zinc-500 dark:text-zinc-400">
+              <span>★ ${p.rating} (${p.reviews})</span>
+              <span class="text-amber-600 dark:text-amber-400 font-bold uppercase">${p.goal}</span>
+            </div>
+            <h3 class="font-serif font-bold text-base uppercase text-zinc-900 dark:text-white">${p.name}</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1 leading-relaxed">${p.description}</p>
+            <p class="font-black text-lg pt-2 text-amber-800 dark:text-amber-400">₹${p.price}</p>
+          </div>
+          <button onclick="aasthaDB.addToCart('${p.id}'); aasthaLayout.updateCartBadge(); window.aasthaToast('Sacred Cart', '${p.name} added to cart!');" class="aastha-btn w-full">Add to Cart</button>
+        </div>
+      `).join('');
+    }
+
+    function filterGoal(goal, buttonElement) {
+      document.querySelectorAll('.product-filter-btn').forEach(btn => {
+        btn.className = "product-filter-btn text-left px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider transition-all bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 cursor-pointer";
+      });
+      if (buttonElement) {
+        buttonElement.className = "product-filter-btn text-left px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider transition-all bg-amber-800 text-white shadow cursor-pointer";
+      }
+      renderProducts(goal, document.getElementById('productSearch').value);
+    }
+
+    function searchProducts() {
+      renderProducts(currentGoal, document.getElementById('productSearch').value);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const targetGoal = urlParams.get('goal');
+      if (targetGoal) {
+        const matchingButton = Array.from(document.querySelectorAll('.product-filter-btn')).find(btn => btn.dataset.filter === targetGoal);
+        filterGoal(targetGoal, matchingButton);
+      } else {
+        renderProducts('all');
+      }
+    });
+  </script>
+</body>
+</html>

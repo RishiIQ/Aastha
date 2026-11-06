@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aastha Pooja Store — Sacred Essentials & Consecrated Artifacts</title>
+  <link rel="shortcut icon" href="./logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pt-[115px]">
+  <script src="js/db.js"></script>
+  <script src="js/layout.js"></script>
+
+ <!-- SECTION 1: Immersive Top Hero Banner -->
+  <section class="py-24 sm:py-32 px-6 text-white bg-cover bg-center bg-no-repeat rounded-3xl mx-4 my-4 shadow-2xl relative overflow-hidden flex items-center justify-center" style="background-image: linear-gradient(rgba(20,10,5,0.85), rgba(60, 25, 10, 0.455)), url('https://images.unsplash.com/photo-1627616058740-5a4b3793c04b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D');">
+    <div class="max-w-4xl mx-auto space-y-6 relative z-10 text-center flex flex-col items-center justify-center">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-sm sm:text-sm font-bold uppercase tracking-widest text-center shadow-md">
+        ✨ Since 1998 — Trusted by 40,000+ Families
+      </span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-black uppercase tracking-tight text-white drop-shadow-lg leading-tight">
+        Sacred Pooja Essentials, <br><em class="text-amber-400 not-italic font-normal">Delivered with Devotion.</em>
+      </h1>
+      <p class="text-sm sm:text-sm md:text-base uppercase tracking-widest text-zinc-300 max-w-xl mx-auto leading-relaxed text-center font-medium">
+        Handpicked diyas, pure ghee wicks, solid brassware and festival kits sourced directly from artisan clusters across India.
+      </p>
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+        <a href="shop.html" class="aastha-btn text-sm sm:text-sm w-full sm:w-auto text-center">Shop Artifacts</a>
+        <a href="calendar.html" class="px-8 py-3.5 border-2 border-white text-white font-bold uppercase text-sm sm:text-sm tracking-widest rounded-xl hover:bg-white hover:text-amber-900 transition-all w-full sm:w-auto text-center">2026 Tithi Calendar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Marquee Announcement Ticker -->
+  <div class="bg-amber-900 text-amber-100 py-3 overflow-hidden whitespace-nowrap text-[0.65rem] font-extrabold uppercase tracking-[0.2em] border-y border-amber-800">
+    <div class="inline-block animate-marquee">
+      100% AUTHENTIC SOURCING &bull; FREE SHIPPING OVER ₹799 &bull; SAME-DAY DISPATCH &bull; SANCTIFIED BRASSWARE &bull; PURIFYING DHOOP &bull;
+    </div>
+  </div>
+
+  <!-- SECTION 3: Everyday Essentials Categories Grid -->
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <h2 class="text-3xl font-serif font-bold uppercase tracking-tight mb-10 text-center sm:text-left">Shop by Category</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <a href="shop.html?goal=Daily%20Aarti" class="group aastha-card p-6 text-center space-y-4">
+        <div class="aspect-square bg-amber-50 dark:bg-zinc-800 flex items-center justify-center overflow-hidden rounded-2xl">
+          <img src="https://m.media-amazon.com/images/I/716301IoO6L.jpg" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform" alt="Diyas">
+        </div>
+        <h4 class="font-bold text-sm uppercase">Brass Diyas</h4>
+      </a>
+      <a href="shop.html?goal=Purification" class="group aastha-card p-6 text-center space-y-4">
+        <div class="aspect-square bg-amber-50 dark:bg-zinc-800 flex items-center justify-center overflow-hidden rounded-2xl">
+          <img src="https://cdn.zeptonow.com/production/ik-seo/cms/product_variant/d4af3c1a-30d2-4218-9b9c-32f58722fee2/Darshana-Puja-Ghee.jpg" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform" alt="Incense">
+        </div>
+        <h4 class="font-bold text-sm uppercase">Incense & Dhoop</h4>
+      </a>
+      <a href="shop.html?goal=Festivals" class="group aastha-card p-6 text-center space-y-4">
+        <div class="aspect-square bg-amber-50 dark:bg-zinc-800 flex items-center justify-center overflow-hidden rounded-2xl">
+          <img src="https://i.pinimg.com/1200x/c8/db/43/c8db435b5ed2dbae9b2c8ad39639472f.jpg" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform" alt="Thali">
+        </div>
+        <h4 class="font-bold text-sm uppercase">Pooja Thalis</h4>
+      </a>
+      <a href="kits.html" class="group aastha-card p-6 text-center space-y-4">
+        <div class="aspect-square bg-amber-50 dark:bg-zinc-800 flex items-center justify-center overflow-hidden rounded-2xl">
+          <img src="https://suyogini.in/cdn/shop/files/Gemini_Generated_Image_e0rkw9e0rkw9e0rk.png?v=1763901205&width=1200" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform" alt="Kits">
+        </div>
+        <h4 class="font-bold text-sm uppercase">Festival Kits</h4>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Customer Favourites Bestsellers Grid -->
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="text-center space-y-2 mb-10">
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase">Customer Favourites</h2>
+      <p class="text-sm uppercase tracking-widest text-zinc-500">Most loved products for your daily altar and festivals.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6" id="homeProductsGrid"></div>
+  </section>
+
+  <!-- SECTION 5: Core Values & Pillars of Devotion -->
+  <section class="bg-amber-950 text-amber-100 py-24 px-6 text-center">
+    <div class="max-w-6xl mx-auto space-y-16">
+      <h2 class="text-3xl sm:text-5xl font-serif font-bold uppercase tracking-tight">Devotion in Every Detail</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center text-sm uppercase tracking-wider">
+        <div class="space-y-3"><h4 class="font-bold text-sm text-amber-400">100% AUTHENTIC SOURCING</h4><p class="text-zinc-400">Prepared following strict shastra guidelines</p></div>
+        <div class="space-y-3"><h4 class="font-bold text-sm text-amber-400">FESTIVAL-READY DELIVERY</h4><p class="text-zinc-400">Guaranteed doorstep shipping before tithis</p></div>
+        <div class="space-y-3"><h4 class="font-bold text-sm text-amber-400">NATURAL INGREDIENTS</h4><p class="text-zinc-400">Pure cow ghee and charcoal-free incense</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Artisan Heritage Showcase -->
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <span class="text-amber-700 dark:text-amber-400 font-bold uppercase text-sm tracking-widest block">Generational Craftsmanship</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase">Crafted by Master Brass Smiths of Moradabad</h2>
+        <p class="text-sm sm:text-sm uppercase tracking-wider text-zinc-600 dark:text-zinc-300 leading-relaxed">In an age of machine-pressed aluminum molds, our artisans practice traditional lost-wax and sand-casting techniques, ensuring divine symmetry and heavy gauge weight.</p>
+        <div><a href="about.html" class="aastha-btn">Read Our Heritage Story</a></div>
+      </div>
+      <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-border">
+        <img src="https://m.media-amazon.com/images/I/51WVHcLh0oL.jpg" alt="Artisan Craftsmanship" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+ <!-- SECTION 7: Devotee Testimonial Highlights -->
+  <section class="py-24 px-6 max-w-7xl mx-auto text-center space-y-12 bg-amber-50/60 dark:bg-zinc-900/60 rounded-3xl my-12 border border-border shadow-sm">
+    <div class="space-y-3 max-w-2xl mx-auto">
+      <span class="text-sm font-bold uppercase tracking-[0.2em] text-amber-700 dark:text-amber-400">Verified Testimonials</span>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase tracking-tight">Trusted by 40,000+ Households</h2>
+      <div class="flex items-center justify-center gap-2 pt-1">
+        <span class="text-amber-500 text-sm tracking-widest">★★★★★</span>
+        <span class="text-zinc-700 dark:text-zinc-300 text-sm font-bold uppercase tracking-wider">4.92 / 5.00 Rating</span>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-left max-w-6xl mx-auto">
+      <!-- Review 1 -->
+      <div class="aastha-card p-8 space-y-6 rounded-3xl flex flex-col justify-between shadow-sm bg-surface">
+        <div class="space-y-3">
+          <p class="text-amber-500 text-sm tracking-widest">★★★★★</p>
+          <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"The Panchmukhi diya quality is exceptional. Wonderful weight, intricate detailing, and long-lasting golden shine..."</p>
+        </div>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhF4AThkRyFYK7ZZHbN-ki_zqKaNK4fIhBJQw2ZrxuPB3cwg93Rit4Vbc&s=10" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shadow-inner shrink-0" alt="Sunita V.">
+          <div>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Sunita V.</h4>
+            <span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Bengaluru</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="aastha-card p-8 space-y-6 rounded-3xl flex flex-col justify-between shadow-sm bg-surface">
+        <div class="space-y-3">
+          <p class="text-amber-500 text-sm tracking-widest">★★★★★</p>
+          <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"Ordered the Navratri kit and nothing was missing. Perfectly packed and stress-free preparation!"</p>
+        </div>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0qT-Mk203-zmoBI2l2YCOfG_T1yJuIid-rGHV7m8hDSSfu-pYNCz1zX8&s=10" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shadow-inner shrink-0" alt="Rohit S.">
+          <div>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Rohit S.</h4>
+            <span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Pune</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="aastha-card p-8 space-y-6 rounded-3xl flex flex-col justify-between shadow-sm bg-surface">
+        <div class="space-y-3">
+          <p class="text-amber-500 text-sm tracking-widest">★★★★★</p>
+          <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"Genuine charcoal-free sandalwood incense. My prayer room smells divine without any smoke headaches."</p>
+        </div>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border">
+          <img src="https://img.magnific.com/free-photo/woman-doing-close-up-photoshoot-studio_53876-14476.jpg?semt=ais_hybrid&w=740&q=80" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shadow-inner shrink-0" alt="Anita D.">
+          <div>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Anita D.</h4>
+            <span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Ahmedabad</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: FAQ Accordion -->
+  <section class="py-20 px-6 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-serif font-bold uppercase text-center mb-12">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      <div class="aastha-card p-6 cursor-pointer rounded-2xl" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+        <h4 class="font-bold text-sm uppercase flex justify-between">Are your brass products pure or plated? <span>+</span></h4>
+        <p class="ans hidden text-sm text-zinc-600 dark:text-zinc-300 mt-3 leading-relaxed">All our brassware items are cast from 100% solid, heavy-gauge brass without any cheap metal plating or inner filling.</p>
+      </div>
+      <div class="aastha-card p-6 cursor-pointer rounded-2xl" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+        <h4 class="font-bold text-sm uppercase flex justify-between">Do you ship fragile items safely? <span>+</span></h4>
+        <p class="ans hidden text-sm text-zinc-600 dark:text-zinc-300 mt-3 leading-relaxed">Yes! We use multi-layer custom corrugated boxes with heavy air bubble wrapping and offer 100% transit damage replacement guarantee.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: Newsletter Sign-up Box -->
+  <section class="bg-amber-100/50 dark:bg-zinc-900 py-16 px-6 text-center border-t border-border">
+    <div class="max-w-xl mx-auto space-y-4">
+      <h3 class="text-2xl font-serif font-bold uppercase">Receive Auspicious Festival Alerts</h3>
+      <p class="text-sm uppercase tracking-wider text-zinc-600 dark:text-zinc-300">Subscribe for monthly tithi guides, festival reminders, and exclusive member discounts.</p>
+      <form onsubmit="event.preventDefault(); alert('Subscribed successfully!');" class="flex gap-2 pt-2">
+        <input type="email" placeholder="Email address" required class="flex-1 p-3.5 border border-border text-sm uppercase bg-surface text-zinc-900 dark:text-white outline-none rounded-xl">
+        <button type="submit" class="aastha-btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- SECTION 10: Global Trust & Certifications Footer Bar -->
+  <section class="py-12 px-6 max-w-7xl mx-auto text-center text-sm uppercase tracking-widest text-zinc-500 border-t border-border">
+    100% Authentic Sourcing &bull; Certified Solid Brassware &bull; 40,000+ Devoted Families Worldwide &bull; Since 1998
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('homeProductsGrid');
+      if (grid && window.aasthaDB) {
+        grid.innerHTML = aasthaDB.products.slice(0, 3).map(p => `
+          <div class="aastha-card p-6 flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md transition-all rounded-3xl">
+            <div class="aspect-square bg-amber-50 dark:bg-zinc-800 overflow-hidden relative rounded-2xl">
+              <span class="absolute top-3 left-3 bg-amber-700 text-white text-[0.6rem] font-bold uppercase px-3 py-1 rounded-full shadow">${p.badge}</span>
+              <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover rounded-2xl">
+            </div>
+            <div class="space-y-1">
+              <h3 class="font-serif font-bold text-base uppercase">${p.name}</h3>
+              <p class="text-amber-500 text-sm">★ ${p.rating} <span class="text-zinc-500 text-[0.65rem]">(${p.reviews} reviews)</span></p>
+              <p class="font-black text-lg pt-1 text-amber-800 dark:text-amber-400">₹${p.price}</p>
+            </div>
+            <button onclick="aasthaDB.addToCart('${p.id}'); aasthaLayout.updateCartBadge(); alert('${p.name} added to cart!');" class="aastha-btn w-full">Add to Cart</button>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

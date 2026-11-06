@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divine Mandalas & Sacred Orbit | Aastha Pooja Store</title>
+  <link rel="shortcut icon" href="./logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            surface: '#fbf9f5',
+            border: '#e6ded1',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Anime.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-serif { font-family: 'Playfair Display', serif; }
+    
+    .glass-sanctum {
+      background: rgba(18, 16, 14, 0.75);
+      border: 1px solid rgba(217, 119, 6, 0.3);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(217, 119, 6, 0.15);
+    }
+
+    /* Orbital text path styling */
+    .orbit-ring {
+      animation: spinSlow 30s linear infinite;
+    }
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .orbit-ring-reverse {
+      animation: spinReverse 25s linear infinite;
+    }
+    @keyframes spinReverse {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+  </style>
+</head>
+<body class="bg-[#090807] text-zinc-100 min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6">
+
+  <!-- Immersive Background Radial Gradients -->
+  <div class="absolute w-[800px] h-[800px] bg-amber-600/10 rounded-full blur-[140px] pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+  <div class="absolute w-[400px] h-[400px] bg-orange-500/10 rounded-full blur-[100px] pointer-events-none top-1/4 left-1/3"></div>
+
+  <!-- Floating Sparkles Particle Canvas Container -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden z-0" id="sparkContainer"></div>
+
+  <!-- Main Art-Directed Sanctum Card -->
+  <div class="glass-sanctum relative z-10 w-full max-w-4xl p-10 sm:p-20 rounded-[3rem] text-center space-y-12 overflow-hidden" id="mainCard">
+    
+    <!-- Decorative Top Badge -->
+    <div class="space-y-4 relative z-10">
+      <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-sm font-bold uppercase tracking-[0.3em] shadow-inner opacity-0" id="badgeAnim">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        Aastha Sacred Geometry Engine
+      </div>
+      
+      <h1 class="text-4xl sm:text-7xl font-serif font-black tracking-tight text-white drop-shadow-2xl opacity-0 leading-tight" id="titleAnim">
+        404 <br><em class="text-amber-500 not-italic font-normal">Error.</em>
+      </h1>
+      
+      <p class="text-sm sm:text-sm uppercase tracking-widest text-zinc-400 max-w-xl mx-auto leading-relaxed opacity-0 font-medium" id="descAnim">
+        An interactive visual meditation celebrating eternal craft, sacred geometry, and pristine temple metallurgy.
+      </p>
+    </div>
+
+    <!-- Interactive Central Mandala & Diya Stage -->
+    <div class="relative py-12 flex items-center justify-center">
+      
+      <!-- Outer Rotating Orbital Ring -->
+      <div class="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full border border-dashed border-amber-500/30 orbit-ring pointer-events-none">
+        <span class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-amber-400 text-sm font-bold tracking-widest bg-zinc-950 px-3 py-1 rounded-full border border-amber-600/40">✨ OM SHRI AASTHAYE NAMAH</span>
+      </div>
+
+      <!-- Inner Reverse Orbital Ring -->
+      <div class="absolute w-52 h-52 sm:w-72 sm:h-72 rounded-full border border-amber-500/20 orbit-ring-reverse pointer-events-none">
+        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 text-orange-400 text-[0.65rem] font-bold tracking-widest bg-zinc-950 px-3 py-1 rounded-full border border-orange-600/40">🪔 PURE BRASS & GHEE</span>
+      </div>
+
+      <!-- Centerpiece Glowing Diya & Lotus Core -->
+      <div class="relative z-20 cursor-pointer group" onclick="pulseMandala()" title="Click to Bless Stage">
+        <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-tr from-amber-600 via-orange-600 to-yellow-500 p-1 shadow-[0_0_50px_rgba(245,158,11,0.5)] transition-transform duration-500 group-hover:scale-110 flex items-center justify-center" id="coreMandala">
+          <div class="w-full h-full bg-zinc-950 rounded-full flex flex-col items-center justify-center p-4 text-center border border-amber-400/40 shadow-inner">
+            <span class="text-3xl sm:text-4xl">🪔</span>
+            <span class="text-[0.6rem] font-bold uppercase tracking-widest text-amber-300 mt-1">Tap for Blessings</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10 opacity-0" id="actionsAnim">
+      <a href="index.html" class="w-full sm:w-auto px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-2xl font-bold text-sm uppercase tracking-widest shadow-xl shadow-amber-600/30 transition-all text-center">
+        Enter Main Store
+      </a>
+      <a href="shop.html" class="w-full sm:w-auto px-8 py-4 bg-zinc-900 border border-amber-500/40 hover:border-amber-400 text-amber-300 rounded-2xl font-bold text-sm uppercase tracking-widest transition-all text-center">
+        Explore Artifacts
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Advanced Anime.js & Interactive Choreography -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Staggered Cinematic Entrance
+      const tl = anime.timeline({
+        easing: 'easeOutExpo',
+        duration: 1200
+      });
+
+      tl.add({
+        targets: '#badgeAnim',
+        translateY: [30, 0],
+        opacity: [0, 1],
+        duration: 1000
+      })
+      .add({
+        targets: '#titleAnim',
+        translateY: [30, 0],
+        opacity: [0, 1],
+        duration: 1100
+      }, '-=800')
+      .add({
+        targets: '#descAnim',
+        translateY: [20, 0],
+        opacity: [0, 1],
+        duration: 900
+      }, '-=800')
+      .add({
+        targets: '#coreMandala',
+        scale: [0.5, 1],
+        opacity: [0, 1],
+        rotate: [-45, 0],
+        duration: 1400
+      }, '-=1000')
+      .add({
+        targets: '#actionsAnim',
+        translateY: [20, 0],
+        opacity: [0, 1],
+        duration: 900
+      }, '-=800');
+
+      // 2. Floating Firefly Particles Generator
+      const container = document.getElementById('sparkContainer');
+      const count = 25;
+
+      for (let i = 0; i < count; i++) {
+        const s = document.createElement('div');
+        s.className = 'absolute rounded-full bg-amber-400/40 blur-[1px]';
+        const size = Math.random() * 5 + 2;
+        s.style.width = `${size}px`;
+        s.style.height = `${size}px`;
+        s.style.left = `${Math.random() * 100}%`;
+        s.style.top = `${Math.random() * 100}%`;
+        container.appendChild(s);
+
+        anime({
+          targets: s,
+          translateY: () => anime.random(-250, 250),
+          translateX: () => anime.random(-250, 250),
+          opacity: [0.8, 0.1, 0.8],
+          scale: [1, 1.8, 0.8],
+          easing: 'easeInOutSine',
+          duration: anime.random(4000, 9000),
+          loop: true,
+          delay: anime.random(0, 3000)
+        });
+      }
+
+      // 3. Mouse Parallax Tilt Effect on Main Sanctum Card
+      const card = document.getElementById('mainCard');
+      document.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        anime({
+          targets: card,
+          rotateX: -y / 40,
+          rotateY: x / 40,
+          duration: 300,
+          easing: 'easeOutSine'
+        });
+      });
+
+      document.addEventListener('mouseleave', () => {
+        anime({
+          targets: card,
+          rotateX: 0,
+          rotateY: 0,
+          duration: 800,
+          easing: 'easeOutElastic(1, .6)'
+        });
+      });
+    });
+
+    // Interactive Tap Pulse Blessing Effect
+    function pulseMandala() {
+      anime({
+        targets: '#coreMandala',
+        scale: [1, 1.2, 1],
+        boxShadow: [
+          '0_0_50px_rgba(245,158,11,0.5)', 
+          '0_0_100px_rgba(245,158,11,0.9)', 
+          '0_0_50px_rgba(245,158,11,0.5)'
+        ],
+        duration: 800,
+        easing: 'easeInOutQuad'
+      });
+
+      if (window.aasthaToast) {
+        window.aasthaToast('Sacred Resonance', '✨ Auspicious vibrations invoked successfully.');
+      }
+    }
+  </script>
+</body>
+</html>

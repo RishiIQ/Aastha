@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Plans & Seva Subscriptions — Aastha Pooja Store</title>
+  <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHrYv7bQadLSGQkjXOU1Zk5vYmwK1VUJNSmIiHhdRuMA&s=10" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="./logo.png" type="image/png">
+</head>
+<body class="pt-[115px]">
+
+  <script src="js/db.js"></script>
+  <script src="js/layout.js"></script>
+
+<!-- SECTION 1: Immersive Cinematic Hero Banner -->
+  <section class="py-24 sm:py-32 px-6 text-white bg-cover bg-center bg-no-repeat rounded-3xl mx-4 my-4 shadow-2xl relative overflow-hidden flex items-center justify-center" style="background-image: linear-gradient(rgba(20,10,5,0.85), rgba(60, 25, 10, 0.455)), url('https://smefinancialsolutions.com/wp-content/uploads/2025/10/Image-2025-10-21-23-07-54.png');">
+    <div class="max-w-4xl mx-auto space-y-6 relative z-10 text-center flex flex-col items-center justify-center">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-sm sm:text-sm font-bold uppercase tracking-widest text-center shadow-md">
+        ✨ Flexible Devotional Subscriptions
+      </span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-black uppercase tracking-tight text-white drop-shadow-lg leading-tight">
+        Sacred Seva Plans, <br><em class="text-amber-400 not-italic font-normal">Tailored for Every Altar.</em>
+      </h1>
+      <p class="text-sm sm:text-sm md:text-base uppercase tracking-widest text-zinc-300 max-w-xl mx-auto leading-relaxed text-center font-medium">
+        Choose from monthly samagri box subscriptions, artisan brass care bundles, or institutional temple trust tiers.
+      </p>
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+        <a href="#plans" class="aastha-btn text-sm sm:text-sm w-full sm:w-auto text-center">Explore Plans</a>
+        <a href="contact.html" class="px-8 py-3.5 border-2 border-white text-white font-bold uppercase text-sm sm:text-sm tracking-widest rounded-xl hover:bg-white hover:text-amber-900 transition-all w-full sm:w-auto text-center">Institutional Desk</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Monthly Samagri Box Pricing Cards -->
+  <section id="plans" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center space-y-2 mb-12">
+      <span class="text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">Subscription Tiers</span>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase">Monthly Devotional Seva Boxes</h2>
+      <p class="text-sm uppercase tracking-widest text-zinc-500">Delivered right before every auspicious monthly purnima or ekadashi.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      <!-- Tier 1 -->
+      <div class="aastha-card p-8 rounded-3xl border border-border flex flex-col justify-between space-y-6 shadow-sm">
+        <div class="space-y-4">
+          <div class="aspect-video rounded-2xl overflow-hidden bg-amber-50 dark:bg-zinc-800">
+            <img src="https://m.media-amazon.com/images/I/71bmUg0GKML._AC_UF894,1000_QL80_.jpg" alt="Nitya Altar Box" class="w-full h-full object-cover">
+          </div>
+          <span class="text-sm font-bold uppercase tracking-widest text-zinc-500 block pt-2">Nitya Altar Box</span>
+          <h3 class="text-3xl font-serif font-bold text-zinc-900 dark:text-white">₹499 <span class="text-sm text-zinc-500 font-sans uppercase">/ month</span></h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 uppercase">Essential daily items for home altars, pure ghee wicks, and sacred camphor.</p>
+          <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-300 pt-4 border-t border-border uppercase font-medium">
+            <li>✓ 30 Pure Cow Ghee Wicks</li>
+            <li>✓ 100g Camphor Tablets</li>
+            <li>✓ Monthly Panchang Guide</li>
+          </ul>
+        </div>
+        <button onclick="openPurchaseModal('Nitya Altar Box', 499)" class="w-full py-3.5 bg-surface border border-border hover:border-amber-600 text-zinc-800 dark:text-zinc-200 rounded-2xl font-bold text-sm uppercase tracking-wider transition-colors cursor-pointer shadow-sm">Select Nitya Plan</button>
+      </div>
+
+      <!-- Tier 2 (Popular) -->
+      <div class="aastha-card p-8 rounded-3xl border-2 border-amber-600 flex flex-col justify-between space-y-6 relative shadow-xl bg-amber-50/20 dark:bg-zinc-900">
+         <div class="space-y-4 pt-2">
+          <div class="aspect-video rounded-2xl overflow-hidden bg-amber-50 dark:bg-zinc-800">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-wrwved-FVnPEdqi4SLv-az-CojZci7JnsDGX6GbtlsWb-2s7KtlV88A&s=10" alt="Festival Seva Box" class="w-full h-full object-cover">
+          </div>
+          <span class="text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 block pt-2">Festival Maha Box</span>
+          <h3 class="text-3xl font-serif font-bold text-zinc-900 dark:text-white">₹1,299 <span class="text-sm text-zinc-500 font-sans uppercase">/ month</span></h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 uppercase">Comprehensive monthly festival samagri kit customized for upcoming holy days.</p>
+          <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-300 pt-4 border-t border-border uppercase font-medium">
+            <li>✓ Complete Festival Samagri Set</li>
+            <li>✓ Charcoal-Free Sandalwood Dhoop</li>
+            <li>✓ Special Copper/Brass Artifacts</li>
+            <li>✓ Free Priority Doorstep Delivery</li>
+          </ul>
+        </div>
+        <button onclick="openPurchaseModal('Festival Maha Box', 1299)" class="aastha-btn w-full py-3.5 text-center cursor-pointer shadow-lg">Select Maha Plan</button>
+      </div>
+
+      <!-- Tier 3 -->
+      <div class="aastha-card p-8 rounded-3xl border border-border flex flex-col justify-between space-y-6 shadow-sm">
+        <div class="space-y-4">
+          <div class="aspect-video rounded-2xl overflow-hidden bg-amber-50 dark:bg-zinc-800">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTjLOyJKHHzkgr6CvJvKDL13-sSwYlVRmSfjZegBIfaYwm7chxq" alt="Temple Trust Tier" class="w-full h-full object-cover">
+          </div>
+          <span class="text-sm font-bold uppercase tracking-widest text-zinc-500 block pt-2">Temple Institutional</span>
+          <h3 class="text-3xl font-serif font-bold text-zinc-900 dark:text-white">₹4,999 <span class="text-sm text-zinc-500 font-sans uppercase">/ month</span></h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 uppercase">Bulk sacrificial and ceremonial provisions designed for community temples and trusts.</p>
+          <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-300 pt-4 border-t border-border uppercase font-medium">
+            <li>✓ Bulk Havan Samagri (10kg)</li>
+            <li>✓ Pure Cow Ghee Canisters (5L)</li>
+            <li>✓ Dedicated Shastra Consultant</li>
+          </ul>
+        </div>
+        <button onclick="openPurchaseModal('Temple Institutional Plan', 4999)" class="w-full py-3.5 bg-surface border border-border hover:border-amber-600 text-zinc-800 dark:text-zinc-200 rounded-2xl font-bold text-sm uppercase tracking-wider transition-colors cursor-pointer shadow-sm">Select Temple Plan</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Visual Artifact Bundles Showcase -->
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <span class="text-amber-700 dark:text-amber-400 font-bold uppercase text-sm tracking-widest block">Heirloom Quality</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase">Hand-Forged Brassware Add-on Bundles</h2>
+        <p class="text-sm sm:text-sm uppercase tracking-wider text-zinc-600 dark:text-zinc-300 leading-relaxed">Enhance any subscription box with custom-cast brass diyas, statues, and consecrated kalashes forged by master smiths in Moradabad.</p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="aastha-card p-4 rounded-2xl text-center space-y-1">
+            <h4 class="font-serif font-bold text-sm uppercase">100% Solid Brass</h4>
+            <p class="text-[0.65rem] uppercase text-zinc-500">No hollow plating</p>
+          </div>
+          <div class="aastha-card p-4 rounded-2xl text-center space-y-1">
+            <h4 class="font-serif font-bold text-sm uppercase">Shipped in Silk</h4>
+            <p class="text-[0.65rem] uppercase text-zinc-500">Heirloom secure packaging</p>
+          </div>
+        </div>
+      </div>
+      <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-border">
+        <img src="https://images.unsplash.com/photo-1585116938581-9d993839191c?q=80&w=1171&auto=format&fit=crop" alt="Brassware Bundles" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Detailed Feature Comparison Matrix -->
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center space-y-2 mb-12">
+      <span class="text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">Plan Comparison</span>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase">Compare Seva Inclusions</h2>
+      <p class="text-sm uppercase tracking-widest text-zinc-500">Detailed breakdown of what comes with each devotional tier.</p>
+    </div>
+    <div class="aastha-card rounded-3xl overflow-x-auto border border-border shadow-sm p-6">
+      <table class="w-full text-left text-sm uppercase tracking-wider">
+        <thead>
+          <tr class="border-b border-border text-amber-800 dark:text-amber-400 font-bold">
+            <th class="py-4 px-6">Feature / Provision</th>
+            <th class="py-4 px-6 text-center">Nitya Altar</th>
+            <th class="py-4 px-6 text-center">Festival Maha</th>
+            <th class="py-4 px-6 text-center">Temple Institutional</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border text-zinc-700 dark:text-zinc-300">
+          <tr>
+            <td class="py-4 px-6 font-bold">Monthly Delivery</td>
+            <td class="py-4 px-6 text-center text-amber-600">✓</td>
+            <td class="py-4 px-6 text-center text-amber-600">✓</td>
+            <td class="py-4 px-6 text-center text-amber-600">✓</td>
+          </tr>
+          <tr>
+            <td class="py-4 px-6 font-bold">Pure Cow Ghee Wicks</td>
+            <td class="py-4 px-6 text-center">30 pcs</td>
+            <td class="py-4 px-6 text-center">100 pcs</td>
+            <td class="py-4 px-6 text-center">500 pcs / 5L Canister</td>
+          </tr>
+          <tr>
+            <td class="py-4 px-6 font-bold">Charcoal-Free Incense</td>
+            <td class="py-4 px-6 text-center">Standard Pack</td>
+            <td class="py-4 px-6 text-center">Premium Assortment</td>
+            <td class="py-4 px-6 text-center">Bulk Temple Bundles</td>
+          </tr>
+          <tr>
+            <td class="py-4 px-6 font-bold">Shastra Verification</td>
+            <td class="py-4 px-6 text-center text-amber-600">✓</td>
+            <td class="py-4 px-6 text-center text-amber-600">✓</td>
+            <td class="py-4 px-6 text-center text-amber-600">✓ (With Pandit Sign-off)</td>
+          </tr>
+          <tr>
+            <td class="py-4 px-6 font-bold">Free Priority Shipping</td>
+            <td class="py-4 px-6 text-center text-zinc-400">₹49 Fee</td>
+            <td class="py-4 px-6 text-center text-amber-600">Free</td>
+            <td class="py-4 px-6 text-center text-amber-600">Free Express Freight</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Artisan Support & Ethical Pricing Callout -->
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-border order-last md:order-first">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Artisan Support" class="w-full h-full object-cover">
+      </div>
+      <div class="space-y-6">
+        <span class="text-amber-700 dark:text-amber-400 font-bold uppercase text-sm tracking-widest block">Fair Trade Guarantee</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase">Where Your Subscription Funds Go</h2>
+        <p class="text-sm sm:text-sm uppercase tracking-wider text-zinc-600 dark:text-zinc-300 leading-relaxed">Unlike commercial marketplaces that squeeze independent artisans, every rupee from your Aastha subscription directly supports generational smiths in Moradabad and floral cultivators in Vrindavan.</p>
+        <div class="space-y-2 text-sm uppercase font-bold text-zinc-700 dark:text-zinc-300">
+          <div class="flex items-center gap-2">✓ 65% Direct Artisan Wage Allocation</div>
+          <div class="flex items-center gap-2">✓ 20% Raw Material & Purity Testing</div>
+          <div class="flex items-center gap-2">✓ 15% Community Welfare & Vedic Scholarship</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: Devotee Testimonial Highlights on Pricing -->
+  <section class="py-24 px-6 max-w-7xl mx-auto text-center space-y-12 bg-amber-50/60 dark:bg-zinc-900/60 rounded-3xl my-12 border border-border shadow-sm">
+    <div class="space-y-3 max-w-2xl mx-auto">
+      <span class="text-sm font-bold uppercase tracking-[0.2em] text-amber-700 dark:text-amber-400">Subscriber Feedback</span>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase tracking-tight">Loved by Devotees on Subscription</h2>
+      <div class="flex items-center justify-center gap-2 pt-1">
+        <span class="text-amber-500 text-sm tracking-widest">★★★★★</span>
+        <span class="text-zinc-700 dark:text-zinc-300 text-sm font-bold uppercase tracking-wider">4.98 / 5.00 Value Score</span>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-left max-w-6xl mx-auto">
+      <div class="aastha-card p-8 space-y-6 rounded-3xl flex flex-col justify-between shadow-sm bg-surface">
+        <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"The Festival Maha box saves me hours of market shopping before Diwali. Absolute top-tier value."</p>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shrink-0" alt="Sunita V.">
+          <div><h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Sunita V.</h4><span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Bengaluru</span></div>
+        </div>
+      </div>
+      <div class="aastha-card p-8 space-y-6 rounded-3xl flex flex-col justify-between shadow-sm bg-surface">
+        <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"Having ghee wicks and camphor delivered automatically every month is a massive blessing."</p>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=200" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shrink-0" alt="Rohit S.">
+          <div><h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Rohit S.</h4><span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Pune</span></div>
+        </div>
+      </div>
+      <div class="aastha-card p-8 space-y-6 rounded-3xl flex flex-col justify-between shadow-sm bg-surface">
+        <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"Transparent pricing and incredible material purity. Worth every single rupee."</p>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shrink-0" alt="Anita D.">
+          <div><h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Anita D.</h4><span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Ahmedabad</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: Frequently Asked Pricing Questions -->
+  <section class="py-20 px-6 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-serif font-bold uppercase text-center mb-12">Pricing & Subscription FAQs</h2>
+    <div class="space-y-4">
+      <div class="aastha-card p-6 cursor-pointer rounded-2xl" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+        <h4 class="font-bold text-sm uppercase flex justify-between">Can I pause or cancel my subscription anytime? <span>+</span></h4>
+        <p class="ans hidden text-sm text-zinc-600 dark:text-zinc-300 mt-3 leading-relaxed">Yes! You have full control over your subscriber dashboard. You can pause, skip a month, or cancel anytime with zero hidden penalty charges.</p>
+      </div>
+      <div class="aastha-card p-6 cursor-pointer rounded-2xl" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+        <h4 class="font-bold text-sm uppercase flex justify-between">When are monthly boxes dispatched? <span>+</span></h4>
+        <p class="ans hidden text-sm text-zinc-600 dark:text-zinc-300 mt-3 leading-relaxed">All active monthly subscription boxes are dispatched on the 10th of every month to ensure they arrive comfortably before upcoming monthly tithis.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: Custom Quote & Institutional Inquiry Box -->
+  <section class="bg-amber-100/50 dark:bg-zinc-900 py-16 px-6 text-center border-t border-border">
+    <div class="max-w-xl mx-auto space-y-4">
+      <h3 class="text-2xl font-serif font-bold uppercase">Need a Customized Temple or Corporate Package?</h3>
+      <p class="text-sm uppercase tracking-wider text-zinc-600 dark:text-zinc-300">Our B2B institutional desk creates tailored samagri packages for temples, trusts, and corporate Diwali gifting.</p>
+      <div class="pt-2">
+        <a href="contact.html" class="aastha-btn inline-block">Contact Institutional Desk</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: Global Trust & Certifications Footer Bar -->
+  <section class="py-12 px-6 max-w-7xl mx-auto text-center text-sm uppercase tracking-widest text-zinc-500 border-t border-border">
+    Flexible Seva Subscriptions &bull; 100% Authentic Sourcing &bull; Cancel Anytime &bull; Since 1998
+  </section>
+
+
+  <!-- PURCHASE POPUP MODAL -->
+  <div id="purchaseModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+    <div class="aastha-card w-full max-w-lg p-8 rounded-3xl shadow-2xl bg-surface dark:bg-zinc-900 border border-border relative space-y-6">
+      <button onclick="closePurchaseModal()" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-amber-700 text-white flex items-center justify-center font-bold hover:bg-amber-800 transition-colors cursor-pointer">✕</button>
+      
+      <div class="space-y-2 text-center">
+        <span class="px-3 py-1 bg-amber-500/20 text-amber-600 dark:text-amber-400 text-sm font-bold uppercase tracking-widest rounded-full">Secure Subscription</span>
+        <h3 id="modalPlanTitle" class="text-2xl font-serif font-bold uppercase tracking-tight">Subscribe to Seva Plan</h3>
+        <p id="modalPlanPrice" class="text-amber-700 dark:text-amber-400 font-serif font-black text-xl"></p>
+      </div>
+
+      <form id="purchaseForm" onsubmit="submitPurchase(event)" class="space-y-4 text-sm uppercase font-bold tracking-wider">
+        <div class="space-y-1">
+          <label class="text-zinc-500">Full Name</label>
+          <input type="text" id="pName" placeholder="e.g. Ramesh Murugan" required class="w-full p-3 bg-surface dark:bg-zinc-800 border border-border rounded-xl text-sm uppercase outline-none focus:border-amber-600 text-zinc-900 dark:text-white">
+        </div>
+
+        <div class="space-y-1">
+          <label class="text-zinc-500">Phone Number (10 Digits)</label>
+          <input type="tel" id="pPhone" placeholder="9876543210" maxlength="10" required class="w-full p-3 bg-surface dark:bg-zinc-800 border border-border rounded-xl text-sm uppercase outline-none focus:border-amber-600 text-zinc-900 dark:text-white">
+        </div>
+
+        <div class="space-y-1">
+          <label class="text-zinc-500">Delivery Address</label>
+          <textarea id="pAddress" rows="3" placeholder="Door No, Street, City, Pincode" required class="w-full p-3 bg-surface dark:bg-zinc-800 border border-border rounded-xl text-sm uppercase outline-none resize-none focus:border-amber-600 text-zinc-900 dark:text-white"></textarea>
+        </div>
+
+        <div class="space-y-2 pt-2 border-t border-border">
+          <label class="text-zinc-500 block mb-1">Select Payment Method</label>
+          <div class="grid grid-cols-3 gap-2">
+            <label class="border border-border p-3 rounded-xl text-center cursor-pointer hover:border-amber-600 flex flex-col items-center gap-1 transition-all">
+              <input type="radio" name="pPayMethod" value="COD" checked class="accent-amber-700">
+              <span>COD</span>
+            </label>
+            <label class="border border-border p-3 rounded-xl text-center cursor-pointer hover:border-amber-600 flex flex-col items-center gap-1 transition-all">
+              <input type="radio" name="pPayMethod" value="UPI" class="accent-amber-700">
+              <span>UPI</span>
+            </label>
+            <label class="border border-border p-3 rounded-xl text-center cursor-pointer hover:border-amber-600 flex flex-col items-center gap-1 transition-all">
+              <input type="radio" name="pPayMethod" value="CARD" class="accent-amber-700">
+              <span>CARD</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="aastha-btn w-full py-4 text-center cursor-pointer shadow-xl mt-4">Confirm Subscription</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let selectedPlan = '';
+    let selectedPrice = 0;
+
+    function openPurchaseModal(planName, price) {
+      selectedPlan = planName;
+      selectedPrice = price;
+      document.getElementById('modalPlanTitle').textContent = `Subscribe to ${planName}`;
+      document.getElementById('modalPlanPrice').textContent = `₹${price} / month`;
+      
+      const modal = document.getElementById('purchaseModal');
+      modal.classList.remove('hidden');
+      setTimeout(() => modal.classList.remove('opacity-0'), 10);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePurchaseModal() {
+      const modal = document.getElementById('purchaseModal');
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    }
+
+    function submitPurchase(event) {
+      event.preventDefault();
+      const phone = document.getElementById('pPhone').value.trim();
+      const address = document.getElementById('pAddress').value.trim();
+      const payMethod = document.querySelector('input[name="pPayMethod"]:checked').value;
+
+      const phoneRegex = /^[0-9]{10}$/;
+      if (!phoneRegex.test(phone)) {
+        window.aasthaToast('Validation Error', 'Please enter a valid 10-digit phone number.');
+        return;
+      }
+
+      if (address.length < 10) {
+        window.aasthaToast('Validation Error', 'Please enter a complete delivery address (at least 10 characters).');
+        return;
+      }
+
+      closePurchaseModal();
+      window.aasthaToast('Subscription Success', `🎉 Successfully subscribed to ${selectedPlan} (₹${selectedPrice}/mo) via ${payMethod}! Confirmation shared via SMS & email.`);
+      document.getElementById('purchaseForm').reset();
+    }
+  </script>
+
+</body>
+</html>

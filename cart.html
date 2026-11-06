@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart & Checkout | Aastha Pooja Store</title>
+  <link rel="shortcut icon" href="./logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pt-[115px]">
+  <script src="js/db.js"></script>
+  <script src="js/layout.js"></script>
+
+  <!-- Hero Header -->
+  <section class="py-44 px-6 text-center text-white bg-cover bg-center bg-no-repeat rounded-3xl mx-4 my-6 shadow-2xl relative overflow-hidden" style="background-image: linear-gradient(rgba(20,10,5,0.85), rgba(60,25,10,0.8)), url('https://chanceux.co.in/cdn/shop/files/pooja-essentials-bag-708978.png?v=1754053633');">
+    <div class="max-w-3xl mx-auto space-y-4 relative z-10">
+      <span class="px-4 py-1 bg-amber-600 text-white text-[0.65rem] font-bold uppercase tracking-widest rounded-full">Secure Checkout</span>
+      <h1 class="text-4xl sm:text-6xl font-serif font-black uppercase tracking-tight">Your Sacred Cart</h1>
+      <p class="text-sm sm:text-sm uppercase tracking-widest text-zinc-300">Review your consecrated artifact selections and complete your safe dispatch.</p>
+    </div>
+  </section>
+
+  <!-- Main Cart & Checkout Container -->
+  <section class="max-w-7xl mx-auto py-12 px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <!-- Left Column: Cart Items -->
+      <div class="lg:col-span-2 space-y-6">
+        <div class="flex items-center justify-between pb-4 border-b border-border">
+          <h2 class="text-xl font-serif font-bold uppercase tracking-tight">Cart Items</h2>
+          <button onclick="aasthaDB.clearCart(); renderCart();" class="text-sm font-bold uppercase text-amber-700 hover:underline cursor-pointer">Clear Cart</button>
+        </div>
+        <div id="cartItemsContainer" class="space-y-4"></div>
+      </div>
+
+      <!-- Right Column: Conditional Checkout Form -->
+      <div class="space-y-6" id="checkoutColumn">
+        <div class="aastha-card p-6 sm:p-8 rounded-3xl space-y-6 shadow-xl bg-surface dark:bg-zinc-900 border border-border">
+          <h3 class="text-lg font-serif font-bold uppercase tracking-tight pb-4 border-b border-border">Checkout & Payment</h3>
+          
+          <form id="checkoutForm" onsubmit="processCheckout(event)" class="space-y-4 text-sm uppercase font-bold tracking-wider">
+            <div class="space-y-1">
+              <label class="text-zinc-500">Full Name</label>
+              <input type="text" id="chkName" placeholder="e.g. Ramesh Murugan" required class="w-full p-3 bg-surface border border-border rounded-xl text-sm uppercase outline-none focus:border-amber-600 text-zinc-900 dark:text-white">
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-zinc-500">Phone Number (10 Digits)</label>
+              <input type="tel" id="chkPhone" placeholder="9876543210" maxlength="10" required class="w-full p-3 bg-surface border border-border rounded-xl text-sm uppercase outline-none focus:border-amber-600 text-zinc-900 dark:text-white">
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-zinc-500">Delivery Address</label>
+              <textarea id="chkAddress" rows="3" placeholder="Door No, Street, City, Pincode" required class="w-full p-3 bg-surface border border-border rounded-xl text-sm uppercase outline-none resize-none focus:border-amber-600 text-zinc-900 dark:text-white"></textarea>
+            </div>
+
+            <div class="space-y-2 pt-2 border-t border-border">
+              <label class="text-zinc-500 block mb-1">Select Payment Method</label>
+              <div class="grid grid-cols-3 gap-2">
+                <label class="border border-border p-3 rounded-xl text-center cursor-pointer hover:border-amber-600 flex flex-col items-center gap-1 transition-all">
+                  <input type="radio" name="payMethod" value="COD" checked onclick="togglePaymentFields('COD')" class="accent-amber-700">
+                  <span>COD</span>
+                </label>
+                <label class="border border-border p-3 rounded-xl text-center cursor-pointer hover:border-amber-600 flex flex-col items-center gap-1 transition-all">
+                  <input type="radio" name="payMethod" value="UPI" onclick="togglePaymentFields('UPI')" class="accent-amber-700">
+                  <span>UPI</span>
+                </label>
+                <label class="border border-border p-3 rounded-xl text-center cursor-pointer hover:border-amber-600 flex flex-col items-center gap-1 transition-all">
+                  <input type="radio" name="payMethod" value="CARD" onclick="togglePaymentFields('CARD')" class="accent-amber-700">
+                  <span>CARD</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Dynamic Payment Fields -->
+            <div id="upiFieldContainer" class="space-y-1 hidden">
+              <label class="text-zinc-500">UPI ID (e.g. username@okaxis)</label>
+              <input type="text" id="chkUpi" placeholder="username@upi" class="w-full p-3 bg-surface border border-border rounded-xl text-sm uppercase outline-none focus:border-amber-600 text-zinc-900 dark:text-white">
+            </div>
+
+            <div id="cardFieldContainer" class="space-y-3 hidden">
+              <div class="space-y-1">
+                <label class="text-zinc-500">Card Number (16 Digits)</label>
+                <input type="text" id="chkCardNum" placeholder="4111 2222 3333 4444" maxlength="16" class="w-full p-3 bg-surface border border-border rounded-xl text-sm uppercase outline-none focus:border-amber-600 text-zinc-900 dark:text-white">
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <div class="space-y-1">
+                  <label class="text-zinc-500">Expiry (MM/YY)</label>
+                  <input type="text" id="chkExpiry" placeholder="MM/YY" maxlength="5" class="w-full p-3 bg-surface border border-border rounded-xl text-sm uppercase outline-none focus:border-amber-600 text-zinc-900 dark:text-white">
+                </div>
+                <div class="space-y-1">
+                  <label class="text-zinc-500">CVV (3 Digits)</label>
+                  <input type="password" id="chkCvv" placeholder="123" maxlength="3" class="w-full p-3 bg-surface border border-border rounded-xl text-sm uppercase outline-none focus:border-amber-600 text-zinc-900 dark:text-white">
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-3 pt-4 border-t border-border text-sm">
+              <div class="flex justify-between text-zinc-500">
+                <span>Subtotal</span>
+                <span id="cartSubtotal" class="font-bold text-zinc-900 dark:text-white">₹0</span>
+              </div>
+              <div class="flex justify-between text-zinc-500">
+                <span>Estimated Shipping</span>
+                <span class="font-bold text-emerald-600">Free (Above ₹799)</span>
+              </div>
+            </div>
+            
+            <div class="pt-2 border-t border-border flex justify-between items-center">
+              <span class="font-bold uppercase text-sm">Total Due</span>
+              <span id="cartTotal" class="font-serif font-black text-2xl text-amber-800 dark:text-amber-400">₹0</span>
+            </div>
+
+            <button type="submit" class="aastha-btn w-full py-4 text-center cursor-pointer shadow-xl mt-4">Place Secure Order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- ADDITIONAL SECTIONS TO INCREASE PAGE LENGTH & TRUST        -->
+  <!-- ========================================================== -->
+
+  <!-- SECTION 3: Sacred Sourcing & Purity Guarantee -->
+  <section class="max-w-7xl mx-auto py-16 px-6">
+    <div class="bg-amber-950 text-amber-50 rounded-3xl p-10 sm:p-14 shadow-2xl relative overflow-hidden">
+      <div class="max-w-2xl space-y-4 relative z-10">
+        <span class="text-sm font-bold uppercase tracking-widest bg-amber-500/20 px-3.5 py-1.5 rounded-full text-amber-300">Sanctified Logistics</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold">100% Transit Protection & Purity Assured</h2>
+        <p class="text-zinc-300 text-sm leading-relaxed">Every item in your cart undergoes multi-layer bubble cushioning and scriptural verification before leaving our Varanasi headquarters. We guarantee pristine delivery.</p>
+        <div class="pt-2"><a href="shop.html" class="aastha-btn">Continue Browsing Artifacts</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Artisan Heritage Spotlight -->
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="text-center space-y-2 mb-12">
+      <h2 class="text-3xl font-serif font-bold uppercase text-zinc-900 dark:text-white">Crafted by Master Smiths of Moradabad</h2>
+      <p class="text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Your purchase directly supports generational craft families across India.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="aastha-card rounded-3xl overflow-hidden border border-border shadow-sm flex flex-col justify-between">
+        <div class="aspect-video bg-amber-50 overflow-hidden">
+          <img src="https://luxeartisanship.com/cdn/shop/articles/391_b4b93840-91cd-494f-882f-4cc9a15df7d4.jpg?v=1790064223" alt="Alloy Testing" class="w-full h-full object-cover">
+        </div>
+        <div class="p-8 space-y-3">
+          <h4 class="font-serif font-bold text-lg uppercase text-zinc-900 dark:text-white">Virgin Brass Testing</h4>
+          <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">No hollow plating or synthetic metal fillers. Pure heavy-gauge solid brass casting.</p>
+        </div>
+      </div>
+      <div class="aastha-card rounded-3xl overflow-hidden border border-border shadow-sm flex flex-col justify-between">
+        <div class="aspect-video bg-amber-50 overflow-hidden">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQGEsBbKXCRDi6mll4G6H2rv3pLkgK9g_rz28lail1LzTZPn0O5368tHy4&s=10" alt="Eco Packaging" class="w-full h-full object-cover">
+        </div>
+        <div class="p-8 space-y-3">
+          <h4 class="font-serif font-bold text-lg uppercase text-zinc-900 dark:text-white">Zero-Plastic Packing</h4>
+          <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">Recycled corrugated storage boxes protecting both your sacred artifacts and Mother Earth.</p>
+        </div>
+      </div>
+      <div class="aastha-card rounded-3xl overflow-hidden border border-border shadow-sm flex flex-col justify-between">
+        <div class="aspect-video bg-amber-50 overflow-hidden">
+          <img src="https://atlanticcourier.net/static/imgs/landing-page/global-b2b-shipping-bg.png" alt="Express Dispatch" class="w-full h-full object-cover">
+        </div>
+        <div class="p-8 space-y-3">
+          <h4 class="font-serif font-bold text-lg uppercase text-zinc-900 dark:text-white">Express Tithi Dispatch</h4>
+          <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">Priority courier routing ensuring your order arrives ahead of auspicious celebrations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Frequently Asked Checkout Questions -->
+  <section class="py-20 px-6 max-w-4xl mx-auto">
+    <h3 class="text-3xl font-serif font-bold uppercase text-center mb-12 text-zinc-900 dark:text-white">Checkout & Shipping FAQs</h3>
+    <div class="space-y-4">
+      <div class="aastha-card p-6 cursor-pointer rounded-2xl" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+        <h4 class="font-bold text-sm uppercase flex justify-between text-zinc-900 dark:text-white">What payment methods are supported? <span>+</span></h4>
+        <p class="ans hidden text-sm text-zinc-600 dark:text-zinc-300 mt-2 leading-relaxed">We support secure Cash on Delivery (COD), UPI handles (Google Pay, PhonePe, Paytm), and major Credit/Debit Cards.</p>
+      </div>
+      <div class="aastha-card p-6 cursor-pointer rounded-2xl" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+        <h4 class="font-bold text-sm uppercase flex justify-between text-zinc-900 dark:text-white">Is there any shipping fee? <span>+</span></h4>
+        <p class="ans hidden text-sm text-zinc-600 dark:text-zinc-300 mt-2 leading-relaxed">Standard doorstep delivery is completely free across India on all consecrated orders above ₹799.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Script Controller -->
+  <script>
+    function renderCart() {
+      const container = document.getElementById('cartItemsContainer');
+      const checkoutColumn = document.getElementById('checkoutColumn');
+      const subtotalEl = document.getElementById('cartSubtotal');
+      const totalEl = document.getElementById('cartTotal');
+      if (!container || !window.aasthaDB) return;
+      const rawCart = aasthaDB.getCart();
+      const cart = rawCart.map(item => {
+        const product = aasthaDB.products.find(p => p.id === item.id);
+        return product ? { ...product, qty: item.qty } : null;
+      }).filter(Boolean);
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="aastha-card p-12 text-center rounded-3xl space-y-6 bg-surface dark:bg-zinc-900 border border-border shadow-sm">
+            <p class="text-sm uppercase font-bold text-zinc-500">Your cart is currently empty. Explore our featured consecrated items below:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left pt-2">
+              ${aasthaDB.products.slice(0, 2).map(p => `
+                <div class="p-4 rounded-2xl bg-white dark:bg-zinc-800 border border-border flex items-center justify-between gap-3">
+                  <img src="${p.image}" class="w-12 h-12 object-cover rounded-xl shrink-0" alt="${p.name}">
+                  <div class="flex-1 min-w-0">
+                    <h5 class="font-serif font-bold text-sm uppercase truncate text-zinc-900 dark:text-white">${p.name}</h5>
+                    <p class="text-sm text-amber-700 font-black">₹${p.price}</p>
+                  </div>
+                  <button onclick="aasthaDB.addToCart('${p.id}'); aasthaLayout.updateCartBadge(); window.aasthaToast('Sacred Cart', '${p.name} added to cart!'); renderCart();" class="px-3 py-2 bg-amber-700 text-white rounded-xl text-sm font-bold uppercase cursor-pointer hover:bg-amber-800">Add</button>
+                </div>
+              `).join('')}
+            </div>
+            <a href="shop.html" class="aastha-btn inline-block mt-4">Browse Full Catalog</a>
+          </div>`;
+        if (checkoutColumn) checkoutColumn.style.display = 'none';
+        subtotalEl.textContent = '₹0';
+        totalEl.textContent = '₹0';
+        return;
+      }
+
+      if (checkoutColumn) checkoutColumn.style.display = 'block';
+
+      container.innerHTML = cart.map(item => `
+        <div class="aastha-card p-4 sm:p-6 rounded-3xl flex items-center justify-between gap-4 bg-surface dark:bg-zinc-900 border border-border shadow-sm">
+          <div class="flex items-center gap-4">
+            <img src="${item.image}" alt="${item.name}" class="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-2xl bg-amber-50">
+            <div>
+              <h4 class="font-serif font-bold text-sm uppercase text-zinc-900 dark:text-white">${item.name}</h4>
+              <p class="text-sm text-amber-700 font-black pt-1">₹${item.price}</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex items-center border border-border rounded-xl overflow-hidden bg-white dark:bg-zinc-800">
+              <button onclick="updateQty('${item.id}', ${item.qty - 1})" class="px-3 py-1.5 text-sm font-bold hover:bg-amber-100 dark:hover:text-black cursor-pointer">−</button>
+              <span class="px-3 py-1.5 text-sm font-bold text-zinc-900 dark:text-white">${item.qty}</span>
+              <button onclick="updateQty('${item.id}', ${item.qty + 1})" class="px-3 py-1.5 text-sm font-bold hover:bg-amber-100 dark:hover:text-black cursor-pointer">+</button>
+            </div>
+            <button onclick="removeItem('${item.id}')" class="text-zinc-400 hover:text-red-600 p-2 cursor-pointer">✕</button>
+          </div>
+        </div>
+      `).join('');
+
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      subtotalEl.textContent = `₹${subtotal}`;
+      totalEl.textContent = `₹${subtotal}`;
+    }
+
+    function updateQty(id, newQty) {
+      let cart = aasthaDB.getCart();
+      const idx = cart.findIndex(i => i.id === id);
+      if (idx > -1) {
+        if (newQty <= 0) cart.splice(idx, 1);
+        else cart[idx].qty = newQty;
+        aasthaDB.saveCart(cart);
+        renderCart();
+      }
+    }
+
+    function removeItem(id) { updateQty(id, 0); }
+
+    function togglePaymentFields(method) {
+      const upiContainer = document.getElementById('upiFieldContainer');
+      const cardContainer = document.getElementById('cardFieldContainer');
+      const upiInput = document.getElementById('chkUpi');
+      const cardNum = document.getElementById('chkCardNum');
+      const expiry = document.getElementById('chkExpiry');
+      const cvv = document.getElementById('chkCvv');
+
+      if (method === 'UPI') {
+        upiContainer.classList.remove('hidden');
+        cardContainer.classList.add('hidden');
+        upiInput.required = true;
+        cardNum.required = false;
+        expiry.required = false;
+        cvv.required = false;
+      } else if (method === 'CARD') {
+        upiContainer.classList.add('hidden');
+        cardContainer.classList.remove('hidden');
+        upiInput.required = false;
+        cardNum.required = true;
+        expiry.required = true;
+        cvv.required = true;
+      } else {
+        upiContainer.classList.add('hidden');
+        cardContainer.classList.add('hidden');
+        upiInput.required = false;
+        cardNum.required = false;
+        expiry.required = false;
+        cvv.required = false;
+      }
+    }
+
+    function processCheckout(event) {
+      event.preventDefault();
+      const cart = aasthaDB.getCart();
+      if (cart.length === 0) {
+        window.aasthaToast('Sacred Cart', 'Your cart is empty. Please add items before checkout.');
+        return;
+      }
+
+      const phone = document.getElementById('chkPhone').value.trim();
+      const address = document.getElementById('chkAddress').value.trim();
+      const payMethod = document.querySelector('input[name="payMethod"]:checked').value;
+
+      // Strict phone validation (exactly 10 digits, numeric)
+      const phoneRegex = /^[0-9]{10}$/;
+      if (!phoneRegex.test(phone)) {
+        window.aasthaToast('Validation Error', 'Please enter a valid 10-digit phone number.');
+        return;
+      }
+
+      // Strict address validation (min 10 characters)
+      if (address.length < 10) {
+        window.aasthaToast('Validation Error', 'Please enter a complete delivery address (at least 10 characters).');
+        return;
+      }
+
+      if (payMethod === 'UPI') {
+        const upiId = document.getElementById('chkUpi').value.trim();
+        const upiRegex = /^.+@.+$/;
+        if (!upiRegex.test(upiId)) {
+          window.aasthaToast('Validation Error', 'Please enter a valid UPI ID (e.g. name@okhdfcbank).');
+          return;
+        }
+      } else if (payMethod === 'CARD') {
+        const cardNum = document.getElementById('chkCardNum').value.trim();
+        const expiry = document.getElementById('chkExpiry').value.trim();
+        const cvv = document.getElementById('chkCvv').value.trim();
+
+        const cardRegex = /^[0-9]{16}$/;
+        if (!cardRegex.test(cardNum)) {
+          window.aasthaToast('Validation Error', 'Please enter a valid 16-digit card number.');
+          return;
+        }
+
+        const expiryRegex = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
+        if (!expiryRegex.test(expiry)) {
+          window.aasthaToast('Validation Error', 'Please enter a valid expiry date in MM/YY format.');
+          return;
+        }
+
+        const cvvRegex = /^[0-9]{3}$/;
+        if (!cvvRegex.test(cvv)) {
+          window.aasthaToast('Validation Error', 'Please enter a valid 3-digit CVV.');
+          return;
+        }
+      }
+
+      // Success
+      aasthaDB.clearCart();
+      renderCart();
+      window.aasthaToast('Secure Checkout', `🎉 Order placed successfully via ${payMethod}! Confirmation & tracking details sent to your phone & email.`);
+      document.getElementById('checkoutForm').reset();
+      togglePaymentFields('COD');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCart();
+      window.addEventListener('cartUpdated', renderCart);
+    });
+  </script>
+</body>
+</html>

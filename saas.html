@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aastha SaaS Control Center — Temple & Inventory Analytics</title>
+  <link rel="shortcut icon" href="./logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pt-[115px]">
+
+  <script src="js/db.js"></script>
+  <script src="js/layout.js"></script>
+<!-- SECTION 1: Immersive Extended Hero Banner -->
+  <section class="py-24 sm:py-32 px-6 text-white bg-cover bg-center bg-no-repeat rounded-3xl mx-4 my-4 shadow-2xl relative overflow-hidden flex items-center justify-center" style="background-image: linear-gradient(rgba(20, 10, 5, 0.75), rgba(60, 25, 10, 0.9)), url('https://img-cdn.inc.com/image/upload/f_webp,q_auto,c_fit/vip/2026/02/build-saas-now-inc-1459777436.jpg');">
+    <div class="max-w-4xl mx-auto space-y-6 relative z-10 text-center flex flex-col items-center justify-center">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-sm sm:text-sm font-bold uppercase tracking-widest text-center shadow-md">
+        ✨ Enterprise Seva & Inventory Cloud
+      </span>
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-black uppercase tracking-tight text-white drop-shadow-lg leading-tight">
+        Enterprise Analytics & <br><em class="text-amber-400 not-italic font-normal">Temple Infrastructure Cloud.</em>
+      </h1>
+      <p class="text-sm sm:text-sm md:text-base uppercase tracking-widest text-zinc-300 max-w-2xl mx-auto leading-relaxed text-center font-medium">
+        Empowering temple trusts, bulk wholesalers, and regional distribution nodes with real-time brass asset tracking and automated tithi dispatch.
+      </p>
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+        <button onclick="window.aasthaToast('SaaS Telemetry', 'Accessing Sandbox Cluster...')" class="aastha-btn cursor-pointer">Launch SaaS Console</button>
+        <button onclick="window.aasthaToast('Notification', 'Downloading Enterprise Whitepaper v4.2')" class="px-6 sm:px-8 py-3.5 border-2 border-white text-white font-bold uppercase text-sm tracking-widest rounded-xl hover:bg-white hover:text-amber-900 transition-all cursor-pointer">View Architecture</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Marquee Announcement Ticker -->
+  <div class="bg-amber-900 text-amber-100 py-3 overflow-hidden whitespace-nowrap text-[0.65rem] font-extrabold uppercase tracking-[0.2em] border-y border-amber-800">
+    <div class="inline-block animate-marquee">
+      99.99% UPTIME &bull; REAL-TIME BRASS VAULT TELEMETRY &bull; AUTOMATED PANCHANG SYNC &bull; SECURE INSTITUTIONAL DISPATCH &bull;
+    </div>
+  </div>
+
+  <!-- SECTION 3: Live Multi-Metric Operations Grid -->
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center space-y-2 mb-10">
+      <span class="text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">Telemetry Stream</span>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase">Live Supply Chain Metrics</h2>
+      <p class="text-sm uppercase tracking-widest text-zinc-500">Auto-refreshing cluster diagnostics and inventory nodes.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="aastha-card p-6 rounded-3xl space-y-3 shadow-sm">
+        <div class="flex items-center justify-between text-sm font-bold uppercase tracking-widest">
+          <span class="text-zinc-500">Brass Vault Stock</span>
+          <span class="text-emerald-600 dark:text-emerald-400">94% Capacity</span>
+        </div>
+        <p class="text-3xl font-serif font-bold text-zinc-900 dark:text-white">12,450 kg</p>
+        <div class="w-full bg-border h-1.5 rounded-full overflow-hidden">
+          <div class="bg-amber-600 h-full w-[94%]"></div>
+        </div>
+      </div>
+      <div class="aastha-card p-6 rounded-3xl space-y-3 shadow-sm">
+        <div class="flex items-center justify-between text-sm font-bold uppercase tracking-widest">
+          <span class="text-zinc-500">Ghee Wick Yield</span>
+          <span class="text-emerald-600 dark:text-emerald-400">Optimal</span>
+        </div>
+        <p class="text-3xl font-serif font-bold text-zinc-900 dark:text-white">450,000 pcs</p>
+        <div class="w-full bg-border h-1.5 rounded-full overflow-hidden">
+          <div class="bg-amber-600 h-full w-[88%]"></div>
+        </div>
+      </div>
+      <div class="aastha-card p-6 rounded-3xl space-y-3 shadow-sm">
+        <div class="flex items-center justify-between text-sm font-bold uppercase tracking-widest">
+          <span class="text-zinc-500">Temple Orders</span>
+          <span class="text-amber-700 dark:text-amber-400">High Demand</span>
+        </div>
+        <p class="text-3xl font-serif font-bold text-zinc-900 dark:text-white">312 active</p>
+        <div class="w-full bg-border h-1.5 rounded-full overflow-hidden">
+          <div class="bg-emerald-600 dark:bg-emerald-500 h-full w-[76%]"></div>
+        </div>
+      </div>
+      <div class="aastha-card p-6 rounded-3xl space-y-3 shadow-sm">
+        <div class="flex items-center justify-between text-sm font-bold uppercase tracking-widest">
+          <span class="text-zinc-500">API Latency</span>
+          <span class="text-emerald-600 dark:text-emerald-400">Stable</span>
+        </div>
+        <p class="text-3xl font-serif font-bold text-zinc-900 dark:text-white">18.4 ms</p>
+        <div class="w-full bg-border h-1.5 rounded-full overflow-hidden">
+          <div class="bg-blue-600 h-full w-[98%]"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Visual Architecture & Artifact Workflow with Image -->
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <span class="text-amber-700 dark:text-amber-400 font-bold uppercase text-sm tracking-widest block">Pipeline Engineering</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase">Automated Shastra-to-Doorstep Cloud Flow</h2>
+        <p class="text-sm sm:text-sm uppercase tracking-wider text-zinc-600 dark:text-zinc-300 leading-relaxed">Our cloud orchestration layer connects regional artisan foundries directly with institutional temple booking engines, managing inventory throughput with absolute scriptural compliance.</p>
+        <div class="space-y-3 text-sm uppercase font-bold text-zinc-700 dark:text-zinc-300">
+          <div class="flex items-center gap-2">✓ Moradabad Foundry IoT Sensor Integration</div>
+          <div class="flex items-center gap-2">✓ Predictive Panchang Calendar AI Engine</div>
+          <div class="flex items-center gap-2">✓ Encrypted Institutional Manifest Generation</div>
+        </div>
+      </div>
+      <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-border">
+        <img src="https://crafsol.com/wp-content/uploads/2024/08/cloud-with-icons-digital-devices-scaled-1.jpg" alt="SaaS Pipeline Visualization" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Core Enterprise Features Matrix Grid -->
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center space-y-2 mb-10">
+      <span class="text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">Enterprise Modules</span>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase">Engineered for Devotional Scale</h2>
+      <p class="text-sm uppercase tracking-widest text-zinc-500">Everything required to manage multi-location spiritual inventory.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="aastha-card p-8 rounded-3xl space-y-4 shadow-sm hover:border-amber-600 transition-colors">
+        <div class="w-12 h-12 rounded-2xl bg-amber-700/10 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold text-xl">⚖️</div>
+        <h3 class="font-serif font-bold text-lg uppercase text-zinc-900 dark:text-white">Alloy Purity Auditor</h3>
+        <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed uppercase">Automated spectroscopy log verification ensuring 100% copper-zinc compliance across all brassware lots.</p>
+      </div>
+      <div class="aastha-card p-8 rounded-3xl space-y-4 shadow-sm hover:border-amber-600 transition-colors">
+        <div class="w-12 h-12 rounded-2xl bg-amber-700/10 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold text-xl">📅</div>
+        <h3 class="font-serif font-bold text-lg uppercase text-zinc-900 dark:text-white">Automated Tithi Sync</h3>
+        <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed uppercase">Syncs inventory replenishment cycles directly with regional panchang calendars and auspicious muhurats.</p>
+      </div>
+      <div class="aastha-card p-8 rounded-3xl space-y-4 shadow-sm hover:border-amber-600 transition-colors">
+        <div class="w-12 h-12 rounded-2xl bg-amber-700/10 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold text-xl">🛡️</div>
+        <h3 class="font-serif font-bold text-lg uppercase text-zinc-900 dark:text-white">Temple Trust Portal</h3>
+        <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed uppercase">Dedicated multi-tier role-based access control for temple administrators and institutional bulk buyers.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- SECTION 6: Regional Node Map & Infrastructure Display -->
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="aastha-card p-8 sm:p-12 rounded-3xl border border-border space-y-8 shadow-sm">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div class="space-y-2 max-w-xl">
+          <span class="text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">Global Cloud Infrastructure</span>
+          <h2 class="text-3xl font-serif font-bold tracking-tight uppercase text-zinc-900 dark:text-white">Distributed Regional Nodes</h2>
+          <p class="text-zinc-600 dark:text-zinc-400 text-sm">Operating across 4 primary fulfillment sanctuaries in Varanasi, Jaipur, Bengaluru, and Chennai.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="px-4 py-2 rounded-xl bg-surface border border-border text-sm font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">● Varanasi Hub: Active</span>
+          <span class="px-4 py-2 rounded-xl bg-surface border border-border text-sm font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">● Bengaluru Hub: Active</span>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <!-- Node 1 -->
+        <div class="p-6 rounded-2xl bg-surface border border-border space-y-4 shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="relative rounded-xl overflow-hidden aspect-video border border-border">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Varanasi Server Rack">
+            </div>
+            <span class="text-[0.65rem] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 block">Node #01</span>
+            <h4 class="font-serif font-bold uppercase text-zinc-900 dark:text-white text-sm">Varanasi Sanctuary</h4>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 uppercase">Primary brass vault & scriptural verification center.</p>
+          </div>
+        </div>
+
+        <!-- Node 2 -->
+        <div class="p-6 rounded-2xl bg-surface border border-border space-y-4 shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="relative rounded-xl overflow-hidden aspect-video border border-border">
+              <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Jaipur Distribution Server">
+            </div>
+            <span class="text-[0.65rem] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 block">Node #02</span>
+            <h4 class="font-serif font-bold uppercase text-zinc-900 dark:text-white text-sm">Jaipur Distribution</h4>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 uppercase">Temple flower logistics & organic incense hub.</p>
+          </div>
+        </div>
+
+        <!-- Node 3 -->
+        <div class="p-6 rounded-2xl bg-surface border border-border space-y-4 shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="relative rounded-xl overflow-hidden aspect-video border border-border">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdocipKjITmy5M5M5gSMzViyBxl778QU-FpR0Nwa-Pa5HeJwuj5xCbQDE&s=10" class="w-full h-full object-cover" alt="Bengaluru Node Server">
+            </div>
+            <span class="text-[0.65rem] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 block">Node #03</span>
+            <h4 class="font-serif font-bold uppercase text-zinc-900 dark:text-white text-sm">Bengaluru South Node</h4>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 uppercase">High-speed regional kit packaging facility.</p>
+          </div>
+        </div>
+
+        <!-- Node 4 -->
+        <div class="p-6 rounded-2xl bg-surface border border-border space-y-4 shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="relative rounded-xl overflow-hidden aspect-video border border-border">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnKVWcpX53Cc8DZ8fRk3g3LhDDTXuA4rveYWQy13UiZrAKRt8dOeOzqtLV&s=10" class="w-full h-full object-cover" alt="Chennai Port Server Room">
+            </div>
+            <span class="text-[0.65rem] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 block">Node #04</span>
+            <h4 class="font-serif font-bold uppercase text-zinc-900 dark:text-white text-sm">Chennai Coastal Port</h4>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 uppercase">Global diaspora export & freight consolidation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: Developer API & Webhook Console -->
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-6 space-y-6">
+        <span class="text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">Developer Experience</span>
+        <h2 class="text-3xl font-serif font-bold tracking-tight uppercase">Powerful Webhooks & REST API</h2>
+        <p class="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed">
+          Integrate real-time tithi triggers, inventory levels, and automated shipping notifications directly into your custom temple management software or ERP systems with our robust JSON endpoints.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="px-6 py-3.5 bg-surface border border-border text-zinc-800 dark:text-zinc-200 rounded-2xl font-bold text-sm uppercase tracking-widest hover:border-amber-600 transition-all inline-block shadow-sm">Explore API Docs</a>
+        </div>
+      </div>
+      <div class="lg:col-span-6 bg-zinc-950 text-amber-400 p-6 rounded-3xl border border-zinc-800 text-sm shadow-2xl overflow-x-auto space-y-3 font-mono">
+        <div class="flex items-center justify-between pb-3 border-b border-zinc-800 text-[0.65rem] text-zinc-500 font-sans uppercase font-bold">
+          <span>POST /v1/sevatrust/dispatch</span>
+          <span class="text-emerald-400">HTTP 200 OK</span>
+        </div>
+        <pre class="leading-relaxed">{
+  "event": "tithi.alert.triggered",
+  "festival": "Navratri Mahotsav 2026",
+  "panchang_status": "auspicious_muhurat",
+  "assigned_vault": "Varanasi_HQ_01",
+  "kit_dispatch_count": 5000,
+  "checksum": "sha256_9f8e2a1..."
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: SaaS Pricing & Tier Matrix -->
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+      <span class="text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">Flexible Licensing</span>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold tracking-tight uppercase">Transparent SaaS Tiers</h2>
+      <p class="text-zinc-600 dark:text-zinc-400 text-sm">Choose the operational scale that matches your temple trust or wholesale distribution network.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      <div class="aastha-card p-8 rounded-3xl border border-border flex flex-col justify-between space-y-6 shadow-sm">
+        <div class="space-y-4">
+          <span class="text-sm font-bold uppercase tracking-widest text-zinc-500">Devotee Home Node</span>
+          <h3 class="text-3xl font-serif font-bold text-zinc-900 dark:text-white">₹0 <span class="text-sm text-zinc-500 font-sans uppercase">/ forever</span></h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 uppercase">Ideal for individual family altars and automated calendar sync.</p>
+          <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-300 pt-4 border-t border-border uppercase font-medium">
+            <li>✓ Basic Panchang Alerts</li>
+            <li>✓ Single Altar Inventory Log</li>
+            <li>✓ Community Support Desk</li>
+          </ul>
+        </div>
+        <button onclick="alert('Selected Devotee Node')" class="w-full py-3.5 bg-surface border border-border hover:border-amber-600 text-zinc-800 dark:text-zinc-200 rounded-2xl font-bold text-sm uppercase tracking-wider transition-colors cursor-pointer shadow-sm">Activate Free Tier</button>
+      </div>
+      <div class="aastha-card p-8 rounded-3xl border-2 border-amber-600 flex flex-col justify-between space-y-6 relative shadow-xl bg-amber-50/20 dark:bg-zinc-900">  
+        <div class="space-y-4 pt-2">
+          <span class="text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">Temple Trust Pro</span>
+          <h3 class="text-3xl font-serif font-bold text-zinc-900 dark:text-white">₹4,999 <span class="text-sm text-zinc-500 font-sans uppercase">/ month</span></h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 uppercase">Designed for community temples and regional wholesale distributors.</p>
+          <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-300 pt-4 border-t border-border uppercase font-medium">
+            <li>✓ Full Brass Vault Telemetry</li>
+            <li>✓ Automated Tithi Dispatch Engine</li>
+            <li>✓ Priority B2B Support Node</li>
+            <li>✓ Custom Webhook Integrations</li>
+          </ul>
+        </div>
+        <button onclick="alert('Selected Temple Trust Pro')" class="aastha-btn w-full py-3.5 text-center cursor-pointer shadow-lg">Deploy Pro Cluster</button>
+      </div>
+      <div class="aastha-card p-8 rounded-3xl border border-border flex flex-col justify-between space-y-6 shadow-sm">
+        <div class="space-y-4">
+          <span class="text-sm font-bold uppercase tracking-widest text-zinc-500">Global Diaspora Grid</span>
+          <h3 class="text-3xl font-serif font-bold text-zinc-900 dark:text-white">Custom</h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 uppercase">Tailored multi-region setups for international trusts and large-scale federations.</p>
+          <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-300 pt-4 border-t border-border uppercase font-medium">
+            <li>✓ Dedicated VPC Clusters</li>
+            <li>✓ Custom ERP & SAP Connectors</li>
+            <li>✓ 24/7 Dedicated Shastra Engineer</li>
+          </ul>
+        </div>
+        <button onclick="alert('Contacting Enterprise Sales')" class="w-full py-3.5 bg-surface border border-border hover:border-amber-600 text-zinc-800 dark:text-zinc-200 rounded-2xl font-bold text-sm uppercase tracking-wider transition-colors cursor-pointer shadow-sm">Contact Enterprise</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: Enterprise Interactive Console Demo -->
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="aastha-card p-8 sm:p-12 rounded-3xl border border-border space-y-8 shadow-sm">
+      <div class="max-w-xl space-y-2">
+        <span class="text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">Sandbox Environment</span>
+        <h2 class="text-3xl font-serif font-bold tracking-tight uppercase">Test-Drive the Cloud Dashboard</h2>
+        <p class="text-sm text-zinc-500 uppercase font-bold">Simulate a festival surge event and monitor real-time queue throughput.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        <div class="space-y-4">
+          <button onclick="alert('Simulating Diya Spike: 15,000 requests processed successfully.')" class="w-full p-4 bg-surface hover:border-amber-600 text-left rounded-2xl border border-border transition-all cursor-pointer space-y-1 shadow-sm">
+            <span class="text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 block">Simulate Diya Spike</span>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 uppercase">Test high-concurrency lamp orders during Deepavali muhurat.</p>
+          </button>
+          <button onclick="alert('Panchang Synced: All regional hubs updated to current tithi.')" class="w-full p-4 bg-surface hover:border-amber-600 text-left rounded-2xl border border-border transition-all cursor-pointer space-y-1 shadow-sm">
+            <span class="text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 block">Force Panchang Sync</span>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 uppercase">Immediate calendar recalculation across all inventory nodes.</p>
+          </button>
+        </div>
+        <div class="md:col-span-2 bg-zinc-950 text-emerald-400 p-6 rounded-3xl border border-zinc-800 text-sm space-y-2 font-mono shadow-xl">
+          <div class="text-zinc-500 pb-2 border-b border-zinc-800 flex items-center justify-between font-sans font-bold uppercase text-[0.65rem]">
+            <span>CONSOLE OUTPUT (live_stream.log)</span>
+            <span class="text-amber-500">STATUS: ACTIVE</span>
+          </div>
+          <p class="text-zinc-300">[13:11:02] INF: Initializing secure handshake with Varanasi vault node...</p>
+          <p class="text-zinc-300">[13:11:04] INF: Alloy spectroscopy verified (99.8% pure copper-zinc alloy).</p>
+          <p class="text-emerald-400">[13:11:06] SUCCESS: Batch #AS-9821 cleared for domestic and international dispatch.</p>
+          <p class="text-amber-400">[13:11:08] SYS: Awaiting operator command or incoming webhook payload...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: Global Trust & Certifications Footer Bar -->
+  <section class="py-12 px-6 max-w-7xl mx-auto text-center text-sm uppercase tracking-widest text-zinc-500 border-t border-border">
+    &copy; 2026 Aastha Enterprise Cloud &bull; All Systems Operational &bull; Serving Devotional Networks Worldwide Since 1998
+  </section>
+
+</body>
+</html>

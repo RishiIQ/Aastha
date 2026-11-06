@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Festival Kits & Curated Boxes | Aastha Pooja Store</title>
+  <link rel="shortcut icon" href="./logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pt-[115px]">
+  <script src="js/db.js"></script>
+  <script src="js/layout.js"></script>
+
+  <!-- SECTION 1: Boutique Hero Banner -->
+  <section class="py-52 px-6 text-center text-white bg-cover bg-center bg-no-repeat rounded-3xl mx-4 my-6 shadow-2xl relative overflow-hidden" style="background-image: linear-gradient(rgba(20, 10, 5, 0.809), rgba(60, 25, 10, 0.754)), url('https://feelingblessed.com/cdn/shop/files/Vastu_Puja_Kit_1880x.jpg?v=1735982779');">
+    <div class="max-w-3xl mx-auto space-y-4 relative z-10">
+      <span class="px-4 py-1 bg-amber-600 text-white text-[0.65rem] font-bold uppercase tracking-widest rounded-full">Complete Solutions</span>
+      <h1 class="text-4xl sm:text-6xl font-serif font-black uppercase tracking-tight">Curated Festival Kits</h1>
+      <p class="text-sm sm:text-sm uppercase tracking-widest text-zinc-300">Everything needed for holy ceremonies packed in a single sanctified box.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Main Festival Kits Grid -->
+  <section class="max-w-7xl mx-auto py-12 px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-3xl font-serif font-bold uppercase">Ready-to-Offer Ceremony Boxes</h2>
+      <p class="text-sm uppercase tracking-widest text-zinc-500">Zero last-minute market runs. Packed according to scriptural requirements.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="aastha-card p-8 rounded-3xl shadow-sm flex flex-col justify-between">
+        <div>
+          <img src="https://suyogini.in/cdn/shop/files/Gemini_Generated_Image_e0rkw9e0rkw9e0rk.png?v=1763901205&width=1200" class="w-full h-56 object-cover rounded-2xl mb-6">
+          <span class="text-sm font-bold bg-amber-100 text-amber-800 px-3 py-1 rounded-full uppercase tracking-wider">Bestseller</span>
+          <h3 class="text-2xl font-serif font-bold mt-4 mb-2">Lakshmi Puja Grand Kit</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Includes 5 brass diyas, kumkum, lotus seeds, camphor, and pure cow ghee.</p>
+        </div>
+        <div class="mt-8 pt-4 border-t border-border flex items-center justify-between">
+          <span class="font-serif font-black text-2xl text-amber-800 dark:text-amber-400">₹1,499</span>
+          <button onclick="aasthaDB.addToCart('kit-1'); aasthaLayout.updateCartBadge(); window.aasthaToast('Sacred Cart', 'Lakshmi Puja Grand Kit added to cart!');" class="aastha-btn">Add Kit</button>
+        </div>
+      </div>
+      <div class="aastha-card p-8 rounded-3xl shadow-sm flex flex-col justify-between">
+        <div>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShLENfE87RyV_ed6ykviT3_t8GVPWMGHszYA-fIzZaJcaNnwampcCWZzAE&s=10" class="w-full h-56 object-cover rounded-2xl mb-6">
+          <span class="text-sm font-bold bg-amber-100 text-amber-800 px-3 py-1 rounded-full uppercase tracking-wider">Essential</span>
+          <h3 class="text-2xl font-serif font-bold mt-4 mb-2">Satyanarayan Katha Kit</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Complete ceremonial items including calibrated gangajal, red cloth, and sandalwood paste.</p>
+        </div>
+        <div class="mt-8 pt-4 border-t border-border flex items-center justify-between">
+          <span class="font-serif font-black text-2xl text-amber-800 dark:text-amber-400">₹999</span>
+          <button onclick="aasthaDB.addToCart('kit-2'); aasthaLayout.updateCartBadge(); window.aasthaToast('Sacred Cart', 'Satyanarayan Katha Kit added to cart!');" class="aastha-btn">Add Kit</button>
+        </div>
+      </div>
+      <div class="aastha-card p-8 rounded-3xl shadow-sm flex flex-col justify-between">
+        <div>
+          <img src="https://www.satvikly.com/app/uploads/2026/06/Griha-Pravesh-puja-kit-1.png" class="w-full h-56 object-cover rounded-2xl mb-6">
+          <span class="text-sm font-bold bg-amber-100 text-amber-800 px-3 py-1 rounded-full uppercase tracking-wider">New Home</span>
+          <h3 class="text-2xl font-serif font-bold mt-4 mb-2">Griha Pravesh Shanti Kit</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Brass kalash, mango leaves toran, havan samagri, and auspicious turmeric threads.</p>
+        </div>
+        <div class="mt-8 pt-4 border-t border-border flex items-center justify-between">
+          <span class="font-serif font-black text-2xl text-amber-800 dark:text-amber-400">₹2,199</span>
+          <button onclick="aasthaDB.addToCart('kit-3'); aasthaLayout.updateCartBadge(); window.aasthaToast('Sacred Cart', 'Griha Pravesh Shanti Kit added to cart!');" class="aastha-btn">Add Kit</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Why Choose Pre-Packed Festival Kits -->
+  <section class="bg-amber-100/30 dark:bg-zinc-900/40 py-20 border-y border-border">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <span class="text-amber-700 dark:text-amber-400 font-bold uppercase text-sm tracking-widest block">Stress-Free Seva</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase">Why Families Across India Switch to Our Kits</h2>
+        <p class="text-sm sm:text-sm uppercase tracking-wider text-zinc-600 dark:text-zinc-300 leading-relaxed">Gathering individual ritual items from crowded local markets can be exhausting and incomplete. Our boxes contain precisely calibrated quantities verified by temple priests.</p>
+        <div><a href="shop.html" class="aastha-btn">Browse Individual Items</a></div>
+      </div>
+      <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-border">
+        <img src="https://www.vedic-pooja.com/_next/static/media/grihapraveshpooja.e3830159.webp" alt="Festival Kits" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+<!-- SECTION 4: Kit Contents Breakdown Table -->
+  <section class="max-w-7xl mx-auto py-20 px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-3xl font-serif font-bold uppercase">What’s Inside Every Box?</h2>
+      <p class="text-sm uppercase tracking-widest text-zinc-500">Absolute transparency regarding material quality and quantities.</p>
+    </div>
+    <div class="aastha-card overflow-x-auto rounded-3xl shadow-sm">
+      <table class="w-full text-left border-collapse text-sm uppercase align-middle">
+        <thead>
+          <tr class="border-b border-border bg-amber-50/80 dark:bg-zinc-800 text-amber-900 dark:text-amber-300">
+            <th class="p-6 font-bold">Kit Name</th>
+            <th class="p-6 font-bold text-center">Brassware</th>
+            <th class="p-6 font-bold text-center">Purity Items</th>
+            <th class="p-6 font-bold text-center">Price</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border text-zinc-700 dark:text-zinc-300">
+          <!-- Row 1 -->
+          <tr class="hover:bg-amber-50/30 dark:hover:bg-zinc-800/50 transition-colors">
+            <td class="p-6 flex items-center gap-4">
+              <img src="https://suyogini.in/cdn/shop/files/Gemini_Generated_Image_e0rkw9e0rkw9e0rk.png?v=1763901205&width=1200" class="w-14 h-14 rounded-2xl object-cover border border-amber-600/30 shrink-0 shadow-sm" alt="Lakshmi Puja Grand Kit">
+              <div>
+                <span class="font-serif font-bold text-sm tracking-wide text-zinc-900 dark:text-white block">Lakshmi Puja Grand Kit</span>
+                <span class="text-[0.6rem] text-amber-700 dark:text-amber-400 font-semibold tracking-widest">Bestseller Box</span>
+              </div>
+            </td>
+            <td class="p-6 text-center font-medium">5 Brass Diyas + Thali</td>
+            <td class="p-6 text-center font-medium">Kumkum, Lotus Seeds, Ghee</td>
+            <td class="p-6 text-center font-serif font-black text-amber-800 dark:text-amber-400 text-base">₹1,499</td>
+          </tr>
+          <!-- Row 2 -->
+          <tr class="hover:bg-amber-50/30 dark:hover:bg-zinc-800/50 transition-colors">
+            <td class="p-6 flex items-center gap-4">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShLENfE87RyV_ed6ykviT3_t8GVPWMGHszYA-fIzZaJcaNnwampcCWZzAE&s=10" class="w-14 h-14 rounded-2xl object-cover border border-amber-600/30 shrink-0 shadow-sm" alt="Satyanarayan Katha Kit">
+              <div>
+                <span class="font-serif font-bold text-sm tracking-wide text-zinc-900 dark:text-white block">Satyanarayan Katha Kit</span>
+                <span class="text-[0.6rem] text-amber-700 dark:text-amber-400 font-semibold tracking-widest">Essential Edition</span>
+              </div>
+            </td>
+            <td class="p-6 text-center font-medium">Panchpatra Set</td>
+            <td class="p-6 text-center font-medium">Gangajal, Red Cloth, Chandan</td>
+            <td class="p-6 text-center font-serif font-black text-amber-800 dark:text-amber-400 text-base">₹999</td>
+          </tr>
+          <!-- Row 3 -->
+          <tr class="hover:bg-amber-50/30 dark:hover:bg-zinc-800/50 transition-colors">
+            <td class="p-6 flex items-center gap-4">
+              <img src="https://www.satvikly.com/app/uploads/2026/06/Griha-Pravesh-puja-kit-1.png" class="w-14 h-14 rounded-2xl object-cover border border-amber-600/30 shrink-0 shadow-sm" alt="Griha Pravesh Shanti Kit">
+              <div>
+                <span class="font-serif font-bold text-sm tracking-wide text-zinc-900 dark:text-white block">Griha Pravesh Shanti Kit</span>
+                <span class="text-[0.6rem] text-amber-700 dark:text-amber-400 font-semibold tracking-widest">New Home Special</span>
+              </div>
+            </td>
+            <td class="p-6 text-center font-medium">Brass Kalash + Toran</td>
+            <td class="p-6 text-center font-medium">Havan Samagri, Turmeric Threads</td>
+            <td class="p-6 text-center font-serif font-black text-amber-800 dark:text-amber-400 text-base">₹2,199</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Eco-Friendly Packaging Guarantee -->
+  <section class="max-w-7xl mx-auto px-6 py-16">
+    <div class="bg-gradient-to-r from-amber-800 to-orange-800 text-white rounded-3xl p-10 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center shadow-2xl">
+      <div class="lg:col-span-7 space-y-4">
+        <span class="text-sm font-bold uppercase tracking-widest bg-white/20 px-3.5 py-1.5 rounded-full">Zero Plastic Promise</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold">Biodegradable Corrugated Storage Boxes</h2>
+        <p class="text-amber-100 text-sm sm:text-base leading-relaxed">Our festival kits are packaged in heavy-duty recycled corrugated boxes with paper cushioning instead of thermocol, protecting both your items and Mother Earth.</p>
+      </div>
+      <div class="lg:col-span-5 rounded-2xl overflow-hidden shadow-2xl aspect-square">
+        <img src="https://nirmalaya.com/cdn/shop/articles/Firefly20240919153540_1.png?v=1774415961&width=2785" alt="Packaging" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Devotee Testimonial Highlights -->
+  <section class="py-24 px-6 max-w-7xl mx-auto text-center space-y-12 bg-amber-50/60 dark:bg-zinc-900/60 rounded-3xl my-12 border border-border shadow-sm">
+    <div class="space-y-3 max-w-2xl mx-auto">
+      <span class="text-sm font-bold uppercase tracking-[0.2em] text-amber-700 dark:text-amber-400">Kit Reviews</span>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase tracking-tight">Loved for Festive Convenience</h2>
+      <div class="flex items-center justify-center gap-2 pt-1">
+        <span class="text-amber-500 text-sm tracking-widest">★★★★★</span>
+        <span class="text-zinc-700 dark:text-zinc-300 text-sm font-bold uppercase tracking-wider">4.96 / 5.00 Kit Rating</span>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-left max-w-6xl mx-auto">
+      <!-- Review 1 -->
+      <div class="aastha-card p-8 space-y-6 rounded-3xl flex flex-col justify-between shadow-sm bg-surface">
+        <div class="space-y-3">
+          <p class="text-amber-500 text-sm tracking-widest">★★★★★</p>
+          <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"The Lakshmi Puja kit saved us hours of shopping during Diwali prep. Flawless execution and pure items!"</p>
+        </div>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9LOuWPjfvANvOUWpwJfVAtSauRcmDO6gNYIonph9y5w&s=10" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shadow-inner shrink-0" alt="Kavita M.">
+          <div>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Kavita M.</h4>
+            <span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Mumbai</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="aastha-card p-8 space-y-6 rounded-3xl flex flex-col justify-between shadow-sm bg-surface">
+        <div class="space-y-3">
+          <p class="text-amber-500 text-sm tracking-widest">★★★★★</p>
+          <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"Every single item was accounted for and pristine. Highly recommended for hassle-free festival rituals."</p>
+        </div>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwa-H5V4Z-K9ouIgER3G8XugvjxwJkGNloD60YAunF97Bxlm2N3p0QtO9v&s=10" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shadow-inner shrink-0" alt="Siddharth N.">
+          <div>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Siddharth N.</h4>
+            <span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Bangalore</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="aastha-card p-8 space-y-6 rounded-3xl flex flex-col justify-between shadow-sm bg-surface">
+        <div class="space-y-3">
+          <p class="text-amber-500 text-sm tracking-widest">★★★★★</p>
+          <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"The brass items in the Griha Pravesh kit are heirloom quality and polished to perfection."</p>
+        </div>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border">
+          <img src="https://images.unsplash.com/photo-1581488613476-ea9bcf51ccf7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shadow-inner shrink-0" alt="Pooja R.">
+          <div>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Pooja R.</h4>
+            <span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Hyderabad</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: Custom Kit Builder Banner -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="bg-zinc-950 text-white rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+      <div class="space-y-3 max-w-xl">
+        <span class="text-sm font-bold text-amber-400 uppercase tracking-widest">Bespoke Ritual Boxes</span>
+        <h2 class="text-2xl lg:text-3xl font-serif font-bold">Want to Customize Your Own Festival Kit?</h2>
+        <p class="text-zinc-400 text-sm">Select your preferred brass items, incense types, and quantities to build a personalized pooja box tailored to your family tradition.</p>
+      </div>
+      <button onclick="window.aasthaToast('Seva Subscription', 'Launching Custom Pooja Box Builder...');" class="px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-2xl font-bold text-sm shrink-0 transition-all shadow-xl uppercase tracking-wider cursor-pointer">Build Custom Kit</button>
+    </div>
+  </section>
+
+  <!-- SECTION 8: Frequently Asked Questions -->
+  <section class="py-20 px-6 max-w-4xl mx-auto">
+    <h3 class="text-3xl font-serif font-bold uppercase text-center mb-12">Festival Kit FAQs</h3>
+    <div class="space-y-4">
+      <div class="aastha-card p-6 cursor-pointer rounded-2xl" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+        <h4 class="font-bold text-sm uppercase flex justify-between">Can I return unused items from a kit? <span>+</span></h4>
+        <p class="ans hidden text-sm text-zinc-500 mt-2 leading-relaxed">Festival kits are curated as complete discounted bundles, so individual items cannot be returned separately unless damaged.</p>
+      </div>
+      <div class="aastha-card p-6 cursor-pointer rounded-2xl" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+        <h4 class="font-bold text-sm uppercase flex justify-between">Do kits include instructions for the pooja? <span>+</span></h4>
+        <p class="ans hidden text-sm text-zinc-500 mt-2 leading-relaxed">Yes! Every kit comes with a beautifully printed step-by-step vidhi booklet in English and Hindi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: Subscription Monthly Pooja Box -->
+  <section class="bg-amber-100/40 dark:bg-zinc-900 py-16 px-6 text-center border-t border-border">
+    <div class="max-w-xl mx-auto space-y-4">
+      <h3 class="text-2xl font-serif font-bold uppercase">Never Miss a Monthly Tithi Again</h3>
+      <p class="text-sm uppercase tracking-wider text-zinc-600 dark:text-zinc-300">Subscribe to our monthly pooja box and we'll deliver the right essentials before every important ritual.</p>
+      <div class="pt-2"><a href="contact.html" class="aastha-btn">Explore Subscription Plans</a></div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: Footer Trust Bar -->
+  <section class="py-12 px-6 max-w-7xl mx-auto text-center text-sm uppercase tracking-widest text-zinc-500 border-t border-border">
+    Scriptural Accuracy Verified &bull; Premium Solid Brass &bull; Guaranteed Transit Safety &bull; Since 1998
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 Hindu Festival Calendar & Panchang — Aastha Pooja Store</title>
+  <link rel="shortcut icon" href="./logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pt-[115px]">
+  <script src="js/db.js"></script>
+  <script src="js/layout.js"></script>
+
+  <!-- SECTION 1: Editorial Calendar Hero Banner -->
+  <section class="py-52 px-6 text-center text-white bg-cover bg-center bg-no-repeat rounded-3xl mx-4 my-6 shadow-2xl relative overflow-hidden" style="background-image: linear-gradient(320deg,rgba(20, 10, 5, 0.591), rgba(60, 25, 10, 0.64)), url('https://blog.align27.com/wp-content/uploads/2023/01/panchang-blog-banner.jpg');">
+    <div class="max-w-3xl mx-auto space-y-4 relative z-10">
+      <span class="px-4 py-1 bg-amber-600 text-white text-[0.65rem] font-bold uppercase tracking-widest rounded-full">Panchang 2026</span>
+      <h1 class="text-4xl sm:text-6xl font-serif font-black uppercase tracking-tight">Full Year Hindu Festival Calendar</h1>
+      <p class="text-sm sm:text-sm uppercase tracking-widest text-zinc-300">Plan ahead, check auspicious tithis, and order ritual essentials at least 5 days prior to every celebration.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Month Filter Bar -->
+  <section class="max-w-7xl mx-auto py-6 px-6">
+    <div class="bg-surface p-4 rounded-3xl border border-border shadow-sm flex flex-wrap justify-center gap-2" id="monthFilterContainer">
+      <button onclick="filterMonth('all', this)" class="month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider bg-amber-800 text-white shadow transition-all cursor-pointer">Full Year 2026</button>
+      <button onclick="filterMonth('Jan', this)" class="month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 transition-all cursor-pointer">January</button>
+      <button onclick="filterMonth('Feb', this)" class="month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 transition-all cursor-pointer">February</button>
+      <button onclick="filterMonth('Mar', this)" class="month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 transition-all cursor-pointer">March</button>
+      <button onclick="filterMonth('Apr', this)" class="month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 transition-all cursor-pointer">April</button>
+      <button onclick="filterMonth('May', this)" class="month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 transition-all cursor-pointer">May</button>
+      <button onclick="filterMonth('Jun', this)" class="month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 transition-all cursor-pointer">June</button>
+      <button onclick="filterMonth('Jul', this)" class="month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 transition-all cursor-pointer">July</button>
+      <button onclick="filterMonth('Aug', this)" class="month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 transition-all cursor-pointer">August</button>
+      <button onclick="filterMonth('Sep', this)" class="month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 transition-all cursor-pointer">September</button>
+      <button onclick="filterMonth('Oct', this)" class="month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 transition-all cursor-pointer">October</button>
+      <button onclick="filterMonth('Nov', this)" class="month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 transition-all cursor-pointer">November</button>
+      <button onclick="filterMonth('Dec', this)" class="month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 transition-all cursor-pointer">December</button>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Main Full Year Festival List Container -->
+  <section class="max-w-4xl mx-auto py-12 px-6" id="festivalListContainer">
+    <!-- JANUARY -->
+    <div class="month-group mb-12" data-month="Jan">
+      <h2 class="text-2xl font-serif font-bold mb-6 text-amber-800 dark:text-amber-400 border-l-4 border-amber-600 pl-4 uppercase">January 2026</h2>
+      <div class="space-y-4">
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">14</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Jan</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Makar Sankranti / Pongal</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Sun's northward journey — til-gud prasad, kite flying, and harvest celebrations.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Essentials</a>
+        </div>
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">26</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Jan</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Vasant Panchami (Saraswati Puja)</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Worship of Goddess Saraswati, yellow attire, and initiating children's education.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Essentials</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEBRUARY -->
+    <div class="month-group mb-12" data-month="Feb">
+      <h2 class="text-2xl font-serif font-bold mb-6 text-amber-800 dark:text-amber-400 border-l-4 border-amber-600 pl-4 uppercase">February 2026</h2>
+      <div class="space-y-4">
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">15</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Feb</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Maha Shivaratri</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Night of Shiva — Panchpatra abhishek, bilva leaf offerings, and night vigil.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Essentials</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARCH -->
+    <div class="month-group mb-12" data-month="Mar">
+      <h2 class="text-2xl font-serif font-bold mb-6 text-amber-800 dark:text-amber-400 border-l-4 border-amber-600 pl-4 uppercase">March 2026</h2>
+      <div class="space-y-4">
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">03</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Mar</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Holika Dahan &amp; Rangwali Holi</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Festival of colors and triumph of good over evil. Bonfire rituals and organic gulal.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Essentials</a>
+        </div>
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">19</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Mar</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Chaitra Navratri &amp; Gudi Padwa</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Hindu New Year and start of Spring Navratri. Ghatasthapana kalash setup.</p>
+          </div>
+          <a href="kits.html" class="aastha-btn">View Navratri Kit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- APRIL -->
+    <div class="month-group mb-12" data-month="Apr">
+      <h2 class="text-2xl font-serif font-bold mb-6 text-amber-800 dark:text-amber-400 border-l-4 border-amber-600 pl-4 uppercase">April 2026</h2>
+      <div class="space-y-4">
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">01</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Apr</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Ram Navami</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Celebration of Lord Rama's birth. Mid-day aarti and panamrit offerings.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Essentials</a>
+        </div>
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">20</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Apr</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Akshaya Tritiya</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Extremely auspicious day for gold, silver, and new venture investments.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Silver Coins</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAY -->
+    <div class="month-group mb-12" data-month="May">
+      <h2 class="text-2xl font-serif font-bold mb-6 text-amber-800 dark:text-amber-400 border-l-4 border-amber-600 pl-4 uppercase">May 2026</h2>
+      <div class="space-y-4">
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">01</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">May</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Buddha Purnima</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Commemoration of Lord Buddha's birth, enlightenment, and nirvana.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Essentials</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- JUNE -->
+    <div class="month-group mb-12" data-month="Jun">
+      <h2 class="text-2xl font-serif font-bold mb-6 text-amber-800 dark:text-amber-400 border-l-4 border-amber-600 pl-4 uppercase">June 2026</h2>
+      <div class="space-y-4">
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">25</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Jun</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Devshayani Ekadashi</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Beginning of Chaturmas — Lord Vishnu enters cosmic slumber.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Essentials</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- JULY -->
+    <div class="month-group mb-12" data-month="Jul">
+      <h2 class="text-2xl font-serif font-bold mb-6 text-amber-800 dark:text-amber-400 border-l-4 border-amber-600 pl-4 uppercase">July 2026</h2>
+      <div class="space-y-4">
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">28</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Jul</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Guru Purnima</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Honoring spiritual and academic teachers, Vyasa Puja.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Essentials</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUGUST -->
+    <div class="month-group mb-12" data-month="Aug">
+      <h2 class="text-2xl font-serif font-bold mb-6 text-amber-800 dark:text-amber-400 border-l-4 border-amber-600 pl-4 uppercase">August 2026</h2>
+      <div class="space-y-4">
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">12</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Aug</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Raksha Bandhan &amp; Sravana Purnima</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Celebrating the sacred bond of protection between brothers and sisters.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Essentials</a>
+        </div>
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">15</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Aug</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Janmashtami (Lord Krishna Birth)</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Midnight celebrations, jhulan swing decoration, and panchamrit abhishek.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Brass Idols</a>
+        </div>
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">28</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Aug</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Ganesh Chaturthi Start</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Welcoming Lord Ganesha home. Modak prasad and 10-day grand festival.</p>
+          </div>
+          <a href="kits.html" class="aastha-btn">View Ganesh Kit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEPTEMBER -->
+    <div class="month-group mb-12" data-month="Sep">
+      <h2 class="text-2xl font-serif font-bold mb-6 text-amber-800 dark:text-amber-400 border-l-4 border-amber-600 pl-4 uppercase">September 2026</h2>
+      <div class="space-y-4">
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">04</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Sep</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Anant Chaturdashi (Ganesh Visarjan)</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Concluding day of Ganeshotsav with immersion procession and prayers.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Essentials</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- OCTOBER -->
+    <div class="month-group mb-12" data-month="Oct">
+      <h2 class="text-2xl font-serif font-bold mb-6 text-amber-800 dark:text-amber-400 border-l-4 border-amber-600 pl-4 uppercase">October 2026</h2>
+      <div class="space-y-4">
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">11</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Oct</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Sharad Navratri Start</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Grand autumn festival dedicated to Goddess Durga. Ghatasthapana.</p>
+          </div>
+          <a href="kits.html" class="aastha-btn">View Navratri Kit</a>
+        </div>
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">20</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Oct</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Dussehra (Vijayadashami)</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Victory of good over evil. Shastra pooja and Ayudha pooja.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Essentials</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOVEMBER -->
+    <div class="month-group mb-12" data-month="Nov">
+      <h2 class="text-2xl font-serif font-bold mb-6 text-amber-800 dark:text-amber-400 border-l-4 border-amber-600 pl-4 uppercase">November 2026</h2>
+      <div class="space-y-4">
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">08</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Nov</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Dhanteras (Dhanatrayodashi)</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Worship of Lord Dhanvantari and Goddess Lakshmi. Purchasing precious metals.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Silver Coins</a>
+        </div>
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">10</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Nov</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Diwali (Deepavali &amp; Lakshmi Puja)</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Festival of lights. Grand Lakshmi-Ganesh pooja with panchmukhi diyas.</p>
+          </div>
+          <a href="kits.html" class="aastha-btn">View Diwali Kit</a>
+        </div>
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">12</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Nov</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Govardhan Puja &amp; Annakut</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Offering mountain of food to Lord Krishna and cattle worship.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Essentials</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DECEMBER -->
+    <div class="month-group mb-12" data-month="Dec">
+      <h2 class="text-2xl font-serif font-bold mb-6 text-amber-800 dark:text-amber-400 border-l-4 border-amber-600 pl-4 uppercase">December 2026</h2>
+      <div class="space-y-4">
+        <div class="aastha-card p-6 rounded-3xl flex items-center justify-between gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-900 font-bold flex flex-col items-center justify-center shrink-0">
+            <span class="text-2xl font-serif font-bold">19</span>
+            <span class="text-[0.65rem] uppercase tracking-wider">Dec</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif font-bold text-xl uppercase mb-1">Gita Jayanti</h3>
+            <p class="text-sm text-zinc-500 uppercase tracking-wider">Commemoration of the day Lord Krishna spoke the Bhagavad Gita to Arjuna.</p>
+          </div>
+          <a href="shop.html" class="aastha-btn">Shop Essentials</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- 10 UNIQUE SECTIONS BELOW THE FULL YEAR CALENDAR            -->
+  <!-- ========================================================== -->
+
+  <!-- SECTION 4: Why Advance Tithi Planning Matters -->
+  <section class="bg-amber-100/30 dark:bg-zinc-900/40 py-20 border-y border-border">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <span class="text-amber-700 dark:text-amber-400 font-bold uppercase text-sm tracking-widest block">Scriptural Guidance</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase">Why Ordering 5 Days Prior Ensures Proper Seva</h2>
+        <p class="text-sm sm:text-sm uppercase tracking-wider text-zinc-600 dark:text-zinc-300 leading-relaxed">Astrological calculations and lunar tithis shift rapidly. Having your pure cow ghee, camphor, and brass thalis ready ahead of time allows for calm, unhurried altar preparation.</p>
+        <div><a href="kits.html" class="aastha-btn">Explore Festival Kits</a></div>
+      </div>
+      <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-border">
+        <img src="https://indrajitrathore.wordpress.com/wp-content/uploads/2014/05/moon-days.jpg" alt="Pooja Setup" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Ekadashi Fasting Guide & Essentials -->
+  <section class="max-w-7xl mx-auto py-20 px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-3xl font-serif font-bold uppercase">Bi-Monthly Ekadashi Vrat Schedule</h2>
+      <p class="text-sm uppercase tracking-widest text-zinc-500">Sacred fasting days occurring twice every lunar month for spiritual purification.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="aastha-card p-8 rounded-3xl space-y-3">
+        <span class="text-sm font-bold uppercase tracking-widest bg-amber-500/20 text-amber-700 dark:text-amber-300 px-3 py-1 rounded-full">Shukla Paksha</span>
+        <h3 class="font-serif font-bold text-xl uppercase">Waxing Moon Ekadashi</h3>
+        <p class="text-sm text-zinc-500 leading-relaxed">Observed on the 11th day after the new moon. Dedicated to Lord Vishnu prayers and sattvic fasting.</p>
+      </div>
+      <div class="aastha-card p-8 rounded-3xl space-y-3">
+        <span class="text-sm font-bold uppercase tracking-widest bg-amber-500/20 text-amber-700 dark:text-amber-300 px-3 py-1 rounded-full">Krishna Paksha</span>
+        <h3 class="font-serif font-bold text-xl uppercase">Waning Moon Ekadashi</h3>
+        <p class="text-sm text-zinc-500 leading-relaxed">Observed on the 11th day after the full moon. Powerful vrata for cleansing karma and mental focus.</p>
+      </div>
+      <div class="aastha-card p-8 rounded-3xl space-y-3">
+        <span class="text-sm font-bold uppercase tracking-widest bg-amber-500/20 text-amber-700 dark:text-amber-300 px-3 py-1 rounded-full">Nirjala Vrat</span>
+        <h3 class="font-serif font-bold text-xl uppercase">Jyestha Nirjala Ekadashi</h3>
+        <p class="text-sm text-zinc-500 leading-relaxed">The strictest waterless fast of the year, bringing the spiritual merit of all 24 ekadashis combined.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Full Moon (Purnima) & New Moon (Amavasya) Significance -->
+  <section class="bg-amber-950 text-amber-50 py-20 my-12 border-y border-amber-900/40">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <span class="text-amber-400 font-bold uppercase text-sm tracking-[0.2em] block">Lunar Cycles</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold leading-tight">The Power of Purnima &amp; Amavasya Pujas</h2>
+        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed font-light">
+          Amavasya is dedicated to honoring ancestors (Pitru tarpana) and invoking Goddess Lakshmi for financial stability, while Purnima represents spiritual culmination and Satyanarayan katha recitations.
+        </p>
+        <div class="pt-2"><a href="shop.html" class="aastha-btn">Shop Purnima &amp; Amavasya Kits</a></div>
+      </div>
+      <div class="rounded-3xl overflow-hidden shadow-2xl aspect-square border border-amber-500/20">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjyMd7MYzpK7U3HglEc8toV5BlEyAZXvUDPtCeUskvGUHju_GYAOFfD_AO&s=10" alt="Purnima Pooja" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+<!-- SECTION 7: Devotee Calendar Feedback & Reviews -->
+  <section class="py-24 px-6 max-w-7xl mx-auto text-center space-y-12 bg-amber-50/40 dark:bg-zinc-900/40 rounded-3xl my-12 border border-border shadow-sm">
+    <div class="space-y-3 max-w-2xl mx-auto">
+      <span class="text-sm font-bold uppercase tracking-[0.2em] text-amber-700 dark:text-amber-400">Panchang Community</span>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase tracking-tight">Loved by Devotees Planning Ahead</h2>
+      <div class="flex items-center justify-center gap-2 pt-1">
+        <span class="text-amber-500 text-sm tracking-widest">★★★★★</span>
+        <span class="text-zinc-700 dark:text-zinc-300 text-sm font-bold uppercase tracking-wider">4.98 / 5.00 Calendar Accuracy</span>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-left max-w-6xl mx-auto items-stretch">
+      <!-- Review 1 -->
+      <div class="aastha-card p-8 rounded-3xl flex flex-col justify-between shadow-sm bg-surface space-y-6">
+        <div class="space-y-3">
+          <p class="text-amber-500 text-sm tracking-widest">★★★★★</p>
+          <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"Having the exact festival dates mapped out helps our family order ritual boxes well in advance."</p>
+        </div>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shadow-inner shrink-0" alt="Meenakshi S.">
+          <div>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Meenakshi S.</h4>
+            <span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Chennai</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="aastha-card p-8 rounded-3xl flex flex-col justify-between shadow-sm bg-surface space-y-6">
+        <div class="space-y-3">
+          <p class="text-amber-500 text-sm tracking-widest">★★★★★</p>
+          <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"Accurate tithi listings and wonderful reminder links to shop essential items seamlessly."</p>
+        </div>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shadow-inner shrink-0" alt="Rajesh K.">
+          <div>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Rajesh K.</h4>
+            <span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Jaipur</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="aastha-card p-8 rounded-3xl flex flex-col justify-between shadow-sm bg-surface space-y-6">
+        <div class="space-y-3">
+          <p class="text-amber-500 text-sm tracking-widest">★★★★★</p>
+          <p class="text-sm sm:text-sm uppercase font-semibold text-zinc-800 dark:text-zinc-200 leading-relaxed italic">"An indispensable spiritual guide and calendar reference for every Hindu household."</p>
+        </div>
+        <div class="flex items-center gap-3.5 pt-4 border-t border-border">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200" class="w-11 h-11 rounded-full object-cover border-2 border-amber-600/40 shadow-inner shrink-0" alt="Sneha P.">
+          <div>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">Sneha P.</h4>
+            <span class="text-[0.6rem] font-medium uppercase tracking-widest text-zinc-400">Kolkata</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: Interactive Auspicious Muhurat Calculator Banner -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="bg-zinc-950 text-white rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+      <div class="space-y-3 max-w-xl">
+        <span class="text-sm font-bold text-amber-400 uppercase tracking-widest">Astrological Precision</span>
+        <h2 class="text-2xl lg:text-3xl font-serif font-bold">Need a Custom Muhurat for Griha Pravesh or Wedding?</h2>
+        <p class="text-zinc-400 text-sm">Connect with our advisory panel of Vedic astrologers to determine the most auspicious planetary alignment for your family milestones.</p>
+      </div>
+      <a href="contact.html" class="px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-2xl font-bold text-sm shrink-0 transition-all shadow-xl uppercase tracking-wider">Request Muhurat Consultation</a>
+    </div>
+  </section>
+
+  <!-- SECTION 9: Frequently Asked Calendar Questions -->
+  <section class="py-20 px-6 max-w-4xl mx-auto">
+    <h3 class="text-3xl font-serif font-bold uppercase text-center mb-12">Calendar &amp; Tithi FAQs</h3>
+    <div class="space-y-4">
+      <div class="aastha-card p-6 cursor-pointer rounded-2xl" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+        <h4 class="font-bold text-sm uppercase flex justify-between">Are festival dates calculated using standard driik panchang? <span>+</span></h4>
+        <p class="ans hidden text-sm text-zinc-500 mt-2 leading-relaxed">Yes, all tithis and nakshatras follow precise traditional astronomical calculations for Indian Standard Time.</p>
+      </div>
+      <div class="aastha-card p-6 cursor-pointer rounded-2xl" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+        <h4 class="font-bold text-sm uppercase flex justify-between">Do festival dates vary across regions? <span>+</span></h4>
+        <p class="ans hidden text-sm text-zinc-500 mt-2 leading-relaxed">Minor variations can occur based on sunrise timings across different time zones or amanta/purnimanta calendar systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: Global Shipping & Tithi Reminder Callout -->
+  <section class="py-16 px-6 max-w-5xl mx-auto text-center border-t border-border">
+    <p class="text-sm font-bold uppercase tracking-[0.2em] text-amber-700 dark:text-amber-400">Never Miss a Sacred Tithi</p>
+    <p class="text-sm font-bold uppercase mt-2">Subscribe to our monthly calendar bulletin and receive WhatsApp notifications 3 days before every major festival.</p>
+  </section>
+
+  <!-- SECTION 11: Newsletter Subscription -->
+  <section class="bg-amber-100/40 dark:bg-zinc-900 py-16 px-6 text-center border-t border-border">
+    <div class="max-w-xl mx-auto space-y-4">
+      <h3 class="text-2xl font-serif font-bold uppercase">Receive Auspicious Festival Alerts</h3>
+      <p class="text-sm uppercase tracking-wider text-zinc-600 dark:text-zinc-300">Subscribe for monthly tithi guides, festival reminders, and exclusive member discounts.</p>
+      <form onsubmit="event.preventDefault(); alert('Subscribed successfully!');" class="flex gap-2 pt-2">
+        <input type="email" placeholder="Email address" required class="flex-1 p-3.5 border border-border text-sm uppercase bg-surface text-zinc-900 dark:text-white outline-none rounded-xl">
+        <button type="submit" class="aastha-btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- SECTION 12: Trust & Footer Brand Bar -->
+  <section class="py-12 px-6 max-w-7xl mx-auto text-center text-sm uppercase tracking-widest text-zinc-500 border-t border-border">
+    Panchang 2026 &bull; Accurate Tithis &bull; Shastra Verified &bull; Since 1998
+  </section>
+
+  <script>
+    function filterMonth(monthCode, buttonElement) {
+      document.querySelectorAll('.month-btn').forEach(btn => {
+        btn.className = "month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider transition-all bg-amber-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-amber-100 cursor-pointer";
+      });
+      if (buttonElement) {
+        buttonElement.className = "month-btn px-4 py-2.5 rounded-xl font-bold text-sm uppercase tracking-wider transition-all bg-amber-800 text-white shadow cursor-pointer";
+      }
+
+      const groups = document.querySelectorAll('.month-group');
+      groups.forEach(group => {
+        if (monthCode === 'all' || group.dataset.month === monthCode) {
+          group.style.display = 'block';
+        } else {
+          group.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Support & Contact | Aastha Pooja Store</title>
+  <link rel="shortcut icon" href="./logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pt-[115px]">
+  <script src="js/db.js"></script>
+  <script src="js/layout.js"></script>
+
+  <!-- SECTION 1: Cinematic Contact Hero Banner -->
+  <section class="flex items-center py-24 h-[70vh] px-6 text-center text-white bg-cover bg-center bg-no-repeat rounded-3xl mx-4 my-6 shadow-2xl relative overflow-hidden" style="background-image: linear-gradient(rgba(20,10,5,0.85), rgba(60,25,10,0.8)), url('https://images.unsplash.com/photo-1612762912757-8c055a8ce87f?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D');">
+    <div class="max-w-3xl mx-auto space-y-4 relative z-10">
+      <span class="px-4 py-1 bg-amber-600 text-white text-[0.65rem] font-bold uppercase tracking-widest rounded-full">24/7 Concierge Support</span>
+      <h1 class="text-4xl sm:text-6xl font-serif font-black uppercase tracking-tight">Get in Touch with Aastha</h1>
+      <p class="text-sm sm:text-sm uppercase tracking-widest text-zinc-300">Our team replies within one business day for custom pooja box orders, temple trusts, and wholesale inquiries.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Interactive Contact Form & Direct Contacts Grid -->
+<section class="py-16 px-6 max-w-7xl mx-auto mt-8">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+    
+    <!-- Main Contact Form (Left 8 Cols / Col-span-8) -->
+    <div class="lg:col-span-8 aastha-card p-10 sm:p-16 rounded-3xl space-y-6 shadow-xl">
+      <div class="space-y-2">
+        <span class="text-sm font-bold uppercase tracking-[0.2em] text-amber-700 dark:text-amber-400">Send a Message</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold uppercase">How can we assist your seva today?</h2>
+      </div>
+      <form onsubmit="event.preventDefault(); alert('Your message has been dispatched successfully! Our team will respond within 2 hours.'); this.reset();" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="text-[0.65rem] font-bold uppercase tracking-widest text-zinc-500">Your Full Name</label>
+            <input type="text" placeholder="e.g. Ramesh Sharma" required class="w-full p-3.5 bg-amber-50/40 dark:bg-zinc-800 border border-border text-sm uppercase outline-none focus:border-amber-600 rounded-xl">
+          </div>
+          <div class="space-y-1">
+            <label class="text-[0.65rem] font-bold uppercase tracking-widest text-zinc-500">Email Address</label>
+            <input type="email" placeholder="ramesh@example.com" required class="w-full p-3.5 bg-amber-50/40 dark:bg-zinc-800 border border-border text-sm uppercase outline-none focus:border-amber-600 rounded-xl">
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="text-[0.65rem] font-bold uppercase tracking-widest text-zinc-500">Inquiry Department</label>
+            <select class="w-full p-3.5 bg-amber-50/40 dark:bg-zinc-800 border border-border text-sm uppercase outline-none focus:border-amber-600 rounded-xl">
+              <option>Customer Support & Order Tracking</option>
+              <option>Temple & Institutional Bulk Supply</option>
+              <option>Wedding Return Gifts</option>
+              <option>Custom Brass Idol Casting</option>
+            </select>
+          </div>
+          <div class="space-y-1">
+            <label class="text-[0.65rem] font-bold uppercase tracking-widest text-zinc-500">Phone Number (Optional)</label>
+            <input type="tel" placeholder="+91 XXXXX XXXXX" class="w-full p-3.5 bg-amber-50/40 dark:bg-zinc-800 border border-border text-sm uppercase outline-none focus:border-amber-600 rounded-xl">
+          </div>
+        </div>
+        <div class="space-y-1">
+          <label class="text-[0.65rem] font-bold uppercase tracking-widest text-zinc-500">Your Message</label>
+          <textarea rows="5" placeholder="Write your requirements here..." required class="w-full p-3.5 bg-amber-50/40 dark:bg-zinc-800 border border-border text-sm uppercase outline-none resize-none focus:border-amber-600 rounded-xl"></textarea>
+        </div>
+        <button type="submit" class="aastha-btn w-full py-4 text-center cursor-pointer shadow-lg">Dispatch Enquiry</button>
+      </form>
+    </div>
+
+    <!-- Quick Contact Sidebar & Map (Right 4 Cols / Col-span-4) -->
+    <div class="lg:col-span-4 space-y-6">
+      
+      <!-- Direct Contacts Card -->
+      <div class="aastha-card p-6 sm:p-8 rounded-3xl space-y-6 shadow-xl">
+        <h3 class="text-lg font-serif font-bold uppercase tracking-tight pb-4 border-b border-border">Direct Contacts</h3>
+        <div class="space-y-4 text-sm uppercase tracking-wider">
+          <div>
+            <p class="text-zinc-400 text-[0.65rem]">Headquarters</p>
+            <p class="font-bold mt-1">14, Vishwanath Gali, Varanasi, UP 221001</p>
+          </div>
+          <div>
+            <p class="text-zinc-400 text-[0.65rem]">General Inquiries</p>
+            <p class="font-bold mt-1 text-amber-700 dark:text-amber-400">support@aasthapooja.com</p>
+          </div>
+          <div>
+            <p class="text-zinc-400 text-[0.65rem]">Temple & Wholesale Desk</p>
+            <p class="font-bold mt-1 text-amber-700 dark:text-amber-400">b2b@aasthapooja.com</p>
+          </div>
+          <div>
+            <p class="text-zinc-400 text-[0.65rem]">WhatsApp Helpline</p>
+            <p class="font-bold mt-1 text-amber-700 dark:text-amber-400">+91 98765 43210</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Embedded Map Preview Card -->
+      <div class="aastha-card p-4 rounded-3xl shadow-xl overflow-hidden space-y-3">
+        <div class="px-2 pt-2 flex items-center justify-between">
+          <span class="text-[0.65rem] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">Flagship Location</span>
+          <span class="text-[0.6rem] text-zinc-500 uppercase">Varanasi, UP</span>
+        </div>
+        <div class="w-full h-48 rounded-2xl overflow-hidden border border-border">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.554030277382!2d83.0104!3d25.3176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE5JzAzLjQiTiA4M8KwMDAnMzcuNCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            class="w-full h-full grayscale contrast-125 opacity-90 hover:grayscale-0 transition-all duration-300">
+          </iframe>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</section>
+  <!-- SECTION 3: Varanasi Headquarters Location Card -->
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="aastha-card p-8 sm:p-12 rounded-3xl text-center space-y-6">
+      <span class="text-sm font-bold uppercase tracking-[0.2em] text-amber-700 dark:text-amber-400">Global Operations</span>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold uppercase">Varanasi Flagship Store & Warehouse</h2>
+      <p class="text-sm sm:text-sm uppercase tracking-wider text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto leading-relaxed">
+        Located right in the heart of Vishwanath Gali, Varanasi. Equipped with climate-controlled cold storage for pure ghee, herbal incense lockers, and heavy brass packaging lines.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Operational Hours & Support Schedule -->
+  <section class="py-16 px-6 max-w-7xl mx-auto bg-amber-100/30 dark:bg-zinc-900/50 rounded-3xl my-8 border border-border">
+    <div class="text-center space-y-2 mb-10">
+      <h2 class="text-2xl font-serif font-bold uppercase">Operational Hours</h2>
+      <p class="text-sm uppercase tracking-widest text-zinc-500">When our team is live across time zones.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto text-center">
+      <div class="aastha-card p-6 rounded-2xl space-y-2">
+        <h4 class="font-bold text-sm uppercase text-amber-700 dark:text-amber-400">Customer Service</h4>
+        <p class="text-sm font-bold uppercase">Mon - Sat: 09:00 - 19:00 IST</p>
+        <p class="text-[0.65rem] text-zinc-400 uppercase">Sunday Email Support Only</p>
+      </div>
+      <div class="aastha-card p-6 rounded-2xl space-y-2">
+        <h4 class="font-bold text-sm uppercase text-amber-700 dark:text-amber-400">B2B Wholesale Desk</h4>
+        <p class="text-sm font-bold uppercase">Mon - Sat: 10:00 - 18:00 IST</p>
+        <p class="text-[0.65rem] text-zinc-400 uppercase">Dedicated Account Managers</p>
+      </div>
+      <div class="aastha-card p-6 rounded-2xl space-y-2">
+        <h4 class="font-bold text-sm uppercase text-amber-700 dark:text-amber-400">Emergency Tithi Support</h4>
+        <p class="text-sm font-bold uppercase">24 / 7 WhatsApp Assistance</p>
+        <p class="text-[0.65rem] text-zinc-400 uppercase">For Urgent Festival Dispatches</p>
+      </div>
+    </div>
+  </section>
+
+ <!-- SECTION 5: Departmental Direct Directory -->
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="text-center space-y-2 mb-10">
+      <h2 class="text-2xl font-serif font-bold uppercase">Department Directory</h2>
+      <p class="text-sm uppercase tracking-widest text-zinc-500">Connect directly with the appropriate team lead.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      
+      <!-- Card 1: Pandit Rameshwar Shastri -->
+      <div class="aastha-card p-6 sm:p-8 rounded-3xl space-y-4 flex flex-col justify-between shadow-sm">
+        <div class="space-y-4">
+          <div class="relative rounded-2xl overflow-hidden aspect-square border border-border shadow-inner bg-amber-50/30 dark:bg-zinc-800">
+            <img src="https://images.unsplash.com/photo-1605857840732-188f2f08cb31?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" class="w-full h-full object-cover object-center" alt="Pandit Rameshwar Shastri">
+          </div>
+          <div class="space-y-1">
+            <span class="text-[0.65rem] font-bold text-amber-700 dark:text-amber-400 uppercase tracking-widest">Shastra & Purity</span>
+            <h3 class="font-serif font-bold text-base uppercase text-zinc-900 dark:text-white">Pandit Rameshwar Shastri</h3>
+          </div>
+        </div>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed uppercase pt-2 border-t border-border">Head of Scriptural Verification & Ritual Compliance.</p>
+      </div>
+
+      <!-- Card 2: Anand Mishra -->
+      <div class="aastha-card p-6 sm:p-8 rounded-3xl space-y-4 flex flex-col justify-between shadow-sm">
+        <div class="space-y-4">
+          <div class="relative rounded-2xl overflow-hidden aspect-square border border-border shadow-inner bg-amber-50/30 dark:bg-zinc-800">
+            <img src="https://images.unsplash.com/photo-1647682163594-76e8c7712fbe?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" class="w-full h-full object-cover object-center" alt="Anand Mishra">
+          </div>
+          <div class="space-y-1">
+            <span class="text-[0.65rem] font-bold text-amber-700 dark:text-amber-400 uppercase tracking-widest">Logistics & Supply</span>
+            <h3 class="font-serif font-bold text-base uppercase text-zinc-900 dark:text-white">Anand Mishra</h3>
+          </div>
+        </div>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed uppercase pt-2 border-t border-border">Director of National Distribution & Transit Safety.</p>
+      </div>
+
+      <!-- Card 3: Priya Tiwari -->
+      <div class="aastha-card p-6 sm:p-8 rounded-3xl space-y-4 flex flex-col justify-between shadow-sm">
+        <div class="space-y-4">
+          <div class="relative rounded-2xl overflow-hidden aspect-square border border-border shadow-inner bg-amber-50/30 dark:bg-zinc-800">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover object-center" alt="Priya Tiwari">
+          </div>
+          <div class="space-y-1">
+            <span class="text-[0.65rem] font-bold text-amber-700 dark:text-amber-400 uppercase tracking-widest">Artisan Relations</span>
+            <h3 class="font-serif font-bold text-base uppercase text-zinc-900 dark:text-white">Priya Tiwari</h3>
+          </div>
+        </div>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed uppercase pt-2 border-t border-border">Head of Moradabad Smith Partnerships & Fair Wages.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 6: FAQ Quick Dropdowns -->
+  <section class="py-16 px-6 max-w-4xl mx-auto">
+    <h3 class="text-2xl font-serif font-bold uppercase text-center mb-8">Contact &amp; Response FAQs</h3>
+    <div class="space-y-4">
+      <div class="aastha-card p-6 cursor-pointer rounded-2xl" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+        <h4 class="font-bold text-sm uppercase flex justify-between">How quickly will I receive a reply? <span>+</span></h4>
+        <p class="ans hidden text-sm text-zinc-500 mt-2 leading-relaxed">Our support desk typically resolves email inquiries within 2 hours during standard business hours.</p>
+      </div>
+      <div class="aastha-card p-6 cursor-pointer rounded-2xl" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+        <h4 class="font-bold text-sm uppercase flex justify-between">Can I request product samples for a temple trust? <span>+</span></h4>
+        <p class="ans hidden text-sm text-zinc-500 mt-2 leading-relaxed">Yes! Temple committee members and institutional buyers can submit a wholesale inquiry to receive complimentary sample boxes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: Global Distribution Hubs Banner -->
+  <section class="bg-amber-950 text-amber-50 py-20 px-6 text-center my-8 border-y border-amber-900/40">
+    <div class="max-w-3xl mx-auto space-y-4">
+      <h3 class="text-3xl font-serif font-black uppercase">Serving 340+ Cities Across India &amp; Abroad</h3>
+      <p class="text-sm uppercase tracking-widest text-zinc-300">From Kashi to metropolitan hubs and international diaspora communities, our distribution network ensures rapid fulfillment.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 8: Interactive Customer Satisfaction Feedback -->
+  <section class="py-16 px-6 max-w-4xl mx-auto text-center">
+    <div class="aastha-card p-8 sm:p-12 rounded-3xl space-y-4">
+      <h3 class="text-xl font-serif font-bold uppercase">Were you satisfied with our support?</h3>
+      <p class="text-sm uppercase tracking-widest text-zinc-500">Rate your experience to help us improve our concierge service.</p>
+      <div class="flex justify-center gap-4 pt-2">
+        <button onclick="alert('Thank you for your positive feedback!');" class="px-6 py-3 bg-amber-700 text-white text-sm font-bold uppercase rounded-xl hover:bg-amber-800 cursor-pointer shadow">★ Excellent</button>
+        <button onclick="alert('Thank you! Our support director will review your feedback.');" class="px-6 py-3 bg-amber-100 dark:bg-zinc-800 text-sm font-bold uppercase rounded-xl hover:bg-amber-200 cursor-pointer">Needs Improvement</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: Newsletter Sign-up -->
+  <section class="bg-amber-100/40 dark:bg-zinc-900 py-16 px-6 text-center border-t border-border">
+    <div class="max-w-xl mx-auto space-y-4">
+      <h3 class="text-2xl font-serif font-bold uppercase">Join the Aastha Community</h3>
+      <p class="text-sm uppercase tracking-wider text-zinc-600 dark:text-zinc-300">Stay connected with our research updates and community announcements.</p>
+      <form onsubmit="event.preventDefault(); alert('Subscribed successfully!');" class="flex gap-2 pt-2">
+        <input type="email" placeholder="Email address" required class="flex-1 p-3.5 border border-border text-sm uppercase bg-surface text-zinc-900 dark:text-white outline-none rounded-xl">
+        <button type="submit" class="aastha-btn">Join</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- SECTION 10: Partner Certifications & Footnote -->
+  <section class="py-12 px-6 max-w-7xl mx-auto text-center text-sm uppercase tracking-widest text-zinc-500 border-t border-border">
+    Shastra Verified Rituals &bull; Solid Brassware &bull; ISO 9001 Quality Standard &bull; Since 1998
+  </section>
+
+</body>
+</html>
