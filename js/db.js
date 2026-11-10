@@ -201,19 +201,7 @@ window.aasthaDB = {
       image: CUSTOM_IMAGES[10],
       description: '999 pure silver coin featuring embossed Goddess Lakshmi and Lord Ganesha for Diwali pooja.'
     },
-    {
-      id: 'aastha-12',
-      name: 'Hand-carved Teak Wood Pooja Chowki',
-      category: 'Decor',
-      goal: 'Decor',
-      price: 1899,
-      oldPrice: 2299,
-      badge: 'HANDCRAFTED',
-      rating: 4.7,
-      reviews: 38,
-      image: CUSTOM_IMAGES[11],
-      description: 'Sturdy seasoned teak wood chowki with traditional brass inlay work for placing idols.'
-    },
+  
     {
       id: 'aastha-13',
       name: 'Kumkum & Turmeric Brass Container Set',
